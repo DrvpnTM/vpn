@@ -20,6 +20,8 @@ interface MainDataSource : Closeable {
 
     fun getConfirmRemove(): Boolean
     fun getDoubleColumnDisplay(): Boolean
+    fun getShowServersWithoutPing(): Boolean
+    fun setShowServersWithoutPing(show: Boolean)
     fun isGroupAllDisplayEnabled(): Boolean
 
     fun getString(resId: Int): String

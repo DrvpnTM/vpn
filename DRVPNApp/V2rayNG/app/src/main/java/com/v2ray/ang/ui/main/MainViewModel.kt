@@ -82,7 +82,8 @@ class MainViewModel(
             selectedGroupId = dataSource.getSelectedSubscriptionId(),
             selectedGuid = dataSource.getSelectServer(),
             confirmRemove = dataSource.getConfirmRemove(),
-            doubleColumnDisplay = dataSource.getDoubleColumnDisplay()
+            doubleColumnDisplay = dataSource.getDoubleColumnDisplay(),
+            showServersWithoutPing = dataSource.getShowServersWithoutPing()
         )
     )
     val uiState: StateFlow<MainUiState> = _uiState.asStateFlow()
@@ -234,9 +235,11 @@ class MainViewModel(
         if (updates.isEmpty()) return
         if (testRequests.bulk?.id != request.id) return
         mutableServerGroupState(request.groupId).update { current ->
+            val allRows = applyTestDelayResultsToRows(current.allRows, updates)
             current.copy(
                 servers = applyTestDelayResults(current.servers, updates),
-                rows = applyTestDelayResultsToRows(current.rows, updates),
+                rows = visibleRows(allRows),
+                allRows = allRows,
             )
         }
     }
@@ -312,6 +315,7 @@ class MainViewModel(
             is MainAction.SelectServer -> updateSelectedGuid(action.guid)
             is MainAction.RemoveServer -> removeServerAndRefresh(action.guid)
             is MainAction.Search -> filterConfig(action.query)
+            is MainAction.SetShowServersWithoutPing -> setShowServersWithoutPing(action.show)
             is MainAction.ImportBatchConfig -> importBatchConfig(action.configText)
             MainAction.LocateHandled -> consumeLocateTarget()
             is MainAction.ShareQRCode -> {
@@ -412,10 +416,25 @@ class MainViewModel(
 
     private fun updateGroupUi(groupId: String, servers: List<ServersCache>) {
         val filteredServers = applyKeywordFilter(servers)
+        val allRows = buildServerRows(groupId, filteredServers)
         mutableServerGroupState(groupId).value = ServerGroupUiState(
             servers = filteredServers,
-            rows = buildServerRows(groupId, filteredServers)
+            rows = visibleRows(allRows),
+            allRows = allRows
         )
+    }
+
+    /** Hides servers without a successful ping unless the user ticked "show servers without ping". */
+    private fun visibleRows(allRows: List<ServerRowUiModel>): List<ServerRowUiModel> =
+        if (uiState.value.showServersWithoutPing) allRows else allRows.filter { it.testDelayMillis > 0L }
+
+    private fun setShowServersWithoutPing(show: Boolean) {
+        if (show == uiState.value.showServersWithoutPing) return
+        _uiState.update { it.copy(showServersWithoutPing = show) }
+        viewModelScope.launch(ioDispatcher) { dataSource.setShowServersWithoutPing(show) }
+        groupUiFlows.values.forEach { flow ->
+            flow.update { current -> current.copy(rows = visibleRows(current.allRows)) }
+        }
     }
 
     private fun buildServerRows(groupId: String, servers: List<ServersCache>): List<ServerRowUiModel> {
@@ -819,7 +838,7 @@ class MainViewModel(
         val rows = groupState.rows.toMutableList()
         rows.moveItem(fromPosition, toPosition)
         val guids = servers.map { it.guid }
-        mutableServerGroupState(groupId).value = ServerGroupUiState(servers, rows)
+        mutableServerGroupState(groupId).value = ServerGroupUiState(servers, rows, rows)
         // A drag emits several moves; serialize writes so an older order cannot overwrite a newer one.
         val previousPersistenceJob = serverOrderPersistenceJobs[groupId]
         serverOrderPersistenceJobs[groupId] = viewModelScope.launch(ioDispatcher) {
@@ -864,11 +883,11 @@ class MainViewModel(
                     if (server.testDelayMillis == 0L) server
                     else server.copy(testDelayMillis = 0L)
                 },
-                rows = current.rows.map { row ->
+                allRows = current.allRows.map { row ->
                     if (row.testDelayMillis == 0L) row
                     else row.copy(testDelayMillis = 0L)
                 }
-            )
+            ).let { it.copy(rows = visibleRows(it.allRows)) }
         }
         val request = testRequests.beginBulk(groupId)
         val message = TestServiceMessage(

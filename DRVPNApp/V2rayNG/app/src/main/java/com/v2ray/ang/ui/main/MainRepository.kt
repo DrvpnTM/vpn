@@ -122,6 +122,13 @@ class MainRepository(
     override fun getDoubleColumnDisplay(): Boolean =
         MmkvManager.decodeSettingsBool(AppConfig.PREF_DOUBLE_COLUMN_DISPLAY, false)
 
+    override fun getShowServersWithoutPing(): Boolean =
+        MmkvManager.decodeSettingsBool(AppConfig.PREF_DRVPN_SHOW_NO_PING, false)
+
+    override fun setShowServersWithoutPing(show: Boolean) {
+        MmkvManager.encodeSettings(AppConfig.PREF_DRVPN_SHOW_NO_PING, show)
+    }
+
     override fun isGroupAllDisplayEnabled(): Boolean =
         MmkvManager.decodeSettingsBool(AppConfig.PREF_GROUP_ALL_DISPLAY)
 

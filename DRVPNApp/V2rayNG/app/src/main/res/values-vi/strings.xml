@@ -565,4 +565,17 @@
     <string name="home_connected">Đã kết nối</string>
     <string name="home_no_server">Chưa chọn máy chủ</string>
     <string name="home_current_server">Máy chủ</string>
+    <string name="region_iran">Iran</string>
+    <string name="region_china">Trung Quốc</string>
+    <string name="region_russia">Nga</string>
+    <string name="region_other">Quốc gia khác</string>
+    <string name="onboarding_select_country">Chọn quốc gia của bạn</string>
+    <string name="onboarding_country_hint">Các trang web trong nước sẽ mở mà không qua VPN.</string>
+    <string name="onboarding_select_language">Chọn ngôn ngữ ứng dụng</string>
+    <string name="onboarding_next">Tiếp</string>
+    <string name="onboarding_back">Quay lại</string>
+    <string name="onboarding_start">Bắt đầu</string>
+    <string name="onboarding_drawer_title">Quốc gia &amp; ngôn ngữ</string>
+    <string name="ping_filter_show_all">Hiện máy chủ không có ping</string>
+    <string name="ping_filter_test_all">Ping tất cả</string>
 </resources>

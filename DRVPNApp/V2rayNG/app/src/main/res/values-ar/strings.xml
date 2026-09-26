@@ -575,4 +575,17 @@
     <string name="home_connected">متصل</string>
     <string name="home_no_server">لم يتم اختيار خادم</string>
     <string name="home_current_server">الخادم</string>
+    <string name="region_iran">إيران</string>
+    <string name="region_china">الصين</string>
+    <string name="region_russia">روسيا</string>
+    <string name="region_other">دول أخرى</string>
+    <string name="onboarding_select_country">اختر بلدك</string>
+    <string name="onboarding_country_hint">ستُفتح المواقع المحلية في بلدك بدون VPN.</string>
+    <string name="onboarding_select_language">اختر لغة التطبيق</string>
+    <string name="onboarding_next">التالي</string>
+    <string name="onboarding_back">السابق</string>
+    <string name="onboarding_start">ابدأ</string>
+    <string name="onboarding_drawer_title">البلد واللغة</string>
+    <string name="ping_filter_show_all">إظهار الخوادم بدون استجابة</string>
+    <string name="ping_filter_test_all">اختبار الكل</string>
 </resources>

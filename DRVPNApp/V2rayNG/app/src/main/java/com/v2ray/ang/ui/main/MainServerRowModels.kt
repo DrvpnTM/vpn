@@ -18,7 +18,10 @@ internal data class ServerRowUiModel(
 
 internal data class ServerGroupUiState(
     val servers: List<ServersCache> = emptyList(),
+    /** Rows shown in the list; may hide servers without a ping result (see MainUiState.showServersWithoutPing). */
     val rows: List<ServerRowUiModel> = emptyList(),
+    /** Every row for [servers], before the ping filter. */
+    val allRows: List<ServerRowUiModel> = rows,
 )
 
 internal fun buildServerRowUiModel(

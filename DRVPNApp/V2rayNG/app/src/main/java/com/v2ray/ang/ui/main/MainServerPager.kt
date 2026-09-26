@@ -69,6 +69,7 @@ fun GroupPagerPage(
     locateTarget: LocateTarget?,
     doubleColumnDisplay: Boolean,
     searchQuery: String,
+    pingFilterActive: Boolean,
     lazyListStates: MutableMap<String, LazyListState>,
     lazyGridStates: MutableMap<String, LazyGridState>,
     onSelectServer: (String) -> Unit,
@@ -82,7 +83,8 @@ fun GroupPagerPage(
         mainViewModel.serverGroupState(groupId)
     }
     val groupState by groupStateFlow.collectAsStateWithLifecycle()
-    val canReorder = groupId.isNotEmpty() && searchQuery.isEmpty()
+    // Reordering maps list positions onto the full server order, so it is off while rows are filtered.
+    val canReorder = groupId.isNotEmpty() && searchQuery.isEmpty() && !pingFilterActive
     val actions = remember(
         onSelectServer,
         onEditServer,

@@ -565,4 +565,17 @@
     <string name="home_connected">已連線</string>
     <string name="home_no_server">未選擇節點</string>
     <string name="home_current_server">節點</string>
+    <string name="region_iran">伊朗</string>
+    <string name="region_china">中國</string>
+    <string name="region_russia">俄羅斯</string>
+    <string name="region_other">其他國家</string>
+    <string name="onboarding_select_country">選擇你的國家</string>
+    <string name="onboarding_country_hint">你所在國家的本地網站將不經過 VPN 直接開啟。</string>
+    <string name="onboarding_select_language">選擇應用程式語言</string>
+    <string name="onboarding_next">下一步</string>
+    <string name="onboarding_back">上一步</string>
+    <string name="onboarding_start">開始</string>
+    <string name="onboarding_drawer_title">國家和語言</string>
+    <string name="ping_filter_show_all">顯示無延遲結果的節點</string>
+    <string name="ping_filter_test_all">全部測延遲</string>
 </resources>

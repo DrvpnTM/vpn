@@ -567,4 +567,17 @@
     <string name="home_connected">সংযুক্ত</string>
     <string name="home_no_server">কোনো সার্ভার নির্বাচিত নয়</string>
     <string name="home_current_server">সার্ভার</string>
+    <string name="region_iran">ইরান</string>
+    <string name="region_china">চীন</string>
+    <string name="region_russia">রাশিয়া</string>
+    <string name="region_other">অন্যান্য দেশ</string>
+    <string name="onboarding_select_country">আপনার দেশ নির্বাচন করুন</string>
+    <string name="onboarding_country_hint">আপনার দেশের স্থানীয় ওয়েবসাইট VPN ছাড়াই খুলবে।</string>
+    <string name="onboarding_select_language">অ্যাপের ভাষা বেছে নিন</string>
+    <string name="onboarding_next">পরবর্তী</string>
+    <string name="onboarding_back">পূর্ববর্তী</string>
+    <string name="onboarding_start">শুরু করুন</string>
+    <string name="onboarding_drawer_title">দেশ ও ভাষা</string>
+    <string name="ping_filter_show_all">পিং ছাড়া সার্ভার দেখান</string>
+    <string name="ping_filter_test_all">সব পিং করুন</string>
 </resources>

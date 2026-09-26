@@ -232,6 +232,12 @@ fun MainScreen(
                         .fillMaxSize()
                         .padding(innerPadding)
                 ) {
+                    PingFilterBar(
+                        showServersWithoutPing = uiState.showServersWithoutPing,
+                        isTesting = uiState.isTesting,
+                        onShowChange = { onAction(MainAction.SetShowServersWithoutPing(it)) },
+                        onTestAll = { onAction(MainAction.TestRealAllServers) }
+                    )
                     if (groups.size > 1) {
                         GroupTabBar(
                             groups = groups,
@@ -264,6 +270,7 @@ fun MainScreen(
                             locateTarget = uiState.locateTarget,
                             doubleColumnDisplay = doubleColumnDisplay,
                             searchQuery = searchQuery,
+                            pingFilterActive = !uiState.showServersWithoutPing,
                             lazyListStates = lazyListStates,
                             lazyGridStates = lazyGridStates,
                             onSelectServer = { guid -> onAction(MainAction.SelectServer(guid)) },
