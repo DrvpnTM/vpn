@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "karing" "\0"
-            VALUE "FileDescription", "karing" "\0"
+            VALUE "FileDescription", "Dr VPN" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "karing" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 karing. All rights reserved." "\0"
             VALUE "OriginalFilename", "karing.exe" "\0"
-            VALUE "ProductName", "karing" "\0"
+            VALUE "ProductName", "Dr VPN" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

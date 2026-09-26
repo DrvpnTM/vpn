@@ -32,7 +32,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE instance,
   sentry_options_set_debug(options, 1);
   sentry_init(options);*/
 
-  const wchar_t* kWindowName = L"Karing";
+  const wchar_t* kWindowName = L"Dr VPN";
   // Attach to console when present (e.g., 'flutter run') or create a
   // new console when running with a debugger.
   if (!::AttachConsole(ATTACH_PARENT_PROCESS) && ::IsDebuggerPresent()) {
