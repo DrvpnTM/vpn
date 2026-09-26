@@ -114,9 +114,9 @@
             android:name=".AutomationCommandReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.nebula.karing.action.CONNECT" />
-                <action android:name="com.nebula.karing.action.DISCONNECT" />
-                <action android:name="com.nebula.karing.action.RECONNECT" />
+                <action android:name="net.drvpn.app.action.CONNECT" />
+                <action android:name="net.drvpn.app.action.DISCONNECT" />
+                <action android:name="net.drvpn.app.action.RECONNECT" />
             </intent-filter>
         </receiver>
         <provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.fileProvider" android:exported="false" android:grantUriPermissions="true" tools:replace="android:authorities">

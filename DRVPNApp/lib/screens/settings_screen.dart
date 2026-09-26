@@ -1232,7 +1232,7 @@ class _SettingScreenState extends LasyRenderingState<SettingsScreen> {
                 pushOptions: GroupItemPushOptions(
                   name: tcontext.SettingsScreen.automationWhitelist,
                   tips:
-                      "osVersion >= 14\ncom.nebula.karing.action.CONNECT\ncom.nebula.karing.action.DISCONNECT\ncom.nebula.karing.action.RECONNECT",
+                      "osVersion >= 14\nnet.drvpn.app.action.CONNECT\nnet.drvpn.app.action.DISCONNECT\nnet.drvpn.app.action.RECONNECT",
                   onPush: () async {
                     final oldData = settingConfig.allowedSenderPackages.toSet();
                     await Navigator.push(
