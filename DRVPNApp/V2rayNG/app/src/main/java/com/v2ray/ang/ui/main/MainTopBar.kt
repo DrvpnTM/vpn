@@ -29,6 +29,8 @@ import com.v2ray.ang.ui.compose.verticalScrollbar
 
 @Composable
 fun MainTopBar(
+    title: String,
+    showListActions: Boolean,
     isLoading: Boolean,
     showSearch: Boolean,
     searchQuery: String,
@@ -48,7 +50,7 @@ fun MainTopBar(
     val maxMenuHeight = LocalConfiguration.current.screenHeightDp.dp - statusBarHeight - navBarHeight - 20.dp
 
     AppTopBar(
-        title = stringResource(R.string.title_server),
+        title = title,
         onBackClick = {},
         isLoading = isLoading,
         isSearchActive = showSearch,
@@ -68,7 +70,7 @@ fun MainTopBar(
             }
         },
         actions = {
-            if (!showSearch) {
+            if (showListActions && !showSearch) {
                 IconButton(onClick = { onSearchToggle(true) }) {
                     Icon(painterResource(R.drawable.ic_search_24dp), contentDescription = stringResource(R.string.acc_search))
                 }
@@ -94,7 +96,7 @@ fun MainTopBar(
                     )
                 }
             }
-            Box(modifier = Modifier.wrapContentSize(Alignment.TopEnd)) {
+            if (showListActions) Box(modifier = Modifier.wrapContentSize(Alignment.TopEnd)) {
                 IconButton(onClick = { showMenu = true }) {
                     Icon(painterResource(R.drawable.ic_more_vert_24dp), contentDescription = stringResource(R.string.acc_more))
                 }

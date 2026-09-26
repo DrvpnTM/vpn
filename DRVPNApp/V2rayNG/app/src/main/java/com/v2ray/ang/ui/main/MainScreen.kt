@@ -9,6 +9,10 @@ import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.DrawerValue
+import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Text
 import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.ScaffoldDefaults
@@ -26,10 +30,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.v2ray.ang.R
 import com.v2ray.ang.dto.entities.ProfileItem
-import com.v2ray.ang.ui.compose.LocalDarkTheme
 import com.v2ray.ang.ui.compose.QRCodeDialog
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
@@ -50,10 +56,11 @@ fun MainScreen(
     val confirmRemove = uiState.confirmRemove
     val shareQRCodeBitmap = uiState.shareQRCodeBitmap
 
-    val isDarkTheme = LocalDarkTheme.current
     val drawerState = rememberDrawerState(DrawerValue.Closed)
     val scope = rememberCoroutineScope()
     var showSearch by remember { mutableStateOf(false) }
+    var selectedTab by rememberSaveable { mutableStateOf(MainTab.Home) }
+    val profileName = groups.firstOrNull { it.id == uiState.selectedGroupId }?.remarks.orEmpty()
     var searchQuery by remember { mutableStateOf("") }
     var showDelAllConfirm by remember { mutableStateOf(false) }
     var showDelDuplicateConfirm by remember { mutableStateOf(false) }
@@ -153,6 +160,8 @@ fun MainScreen(
             contentWindowInsets = ScaffoldDefaults.contentWindowInsets,
             topBar = {
                 MainTopBar(
+                    title = stringResource(if (selectedTab == MainTab.Home) R.string.app_name else R.string.title_server),
+                    showListActions = selectedTab == MainTab.Proxies,
                     isLoading = isLoading,
                     showSearch = showSearch,
                     searchQuery = searchQuery,
@@ -185,18 +194,39 @@ fun MainScreen(
                 )
             },
             bottomBar = {
-                MainBottomBar(
-                    displayText = displayText,
-                    isRunning = isRunning,
-                    isDarkTheme = isDarkTheme,
-                    onAction = onAction
-                )
+                NavigationBar {
+                    MainTab.entries.forEach { tab ->
+                        NavigationBarItem(
+                            selected = selectedTab == tab,
+                            onClick = {
+                                if (tab == MainTab.Home && showSearch) {
+                                    searchQuery = ""
+                                    onAction(MainAction.Search(""))
+                                    showSearch = false
+                                }
+                                selectedTab = tab
+                            },
+                            icon = { Icon(painterResource(tab.iconRes), contentDescription = null) },
+                            label = { Text(stringResource(tab.labelRes)) }
+                        )
+                    }
+                }
             },
             floatingActionButton = {},
         ) { innerPadding ->
             val layoutDirection = LocalLayoutDirection.current
 
-            if (groups.isNotEmpty()) {
+            if (selectedTab == MainTab.Home) {
+                MainHomeTab(
+                    profileName = profileName,
+                    selectedServerName = uiState.selectedServerName,
+                    isRunning = isRunning,
+                    statusText = displayText,
+                    onAction = onAction,
+                    onOpenProxies = { selectedTab = MainTab.Proxies },
+                    modifier = Modifier.padding(innerPadding)
+                )
+            } else if (groups.isNotEmpty()) {
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -257,4 +287,9 @@ fun MainScreen(
             }
         }
     }
+}
+
+enum class MainTab(val iconRes: Int, val labelRes: Int) {
+    Home(R.drawable.ic_home_24dp, R.string.home_tab_home),
+    Proxies(R.drawable.ic_proxies_24dp, R.string.home_tab_proxies)
 }

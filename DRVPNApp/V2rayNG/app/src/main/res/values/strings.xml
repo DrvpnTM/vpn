@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">v2rayNG</string>
+    <string name="app_name" translatable="false">Dr VPN</string>
     <string name="app_widget_name">Switch</string>
     <string name="app_tile_name">Switch</string>
     <string name="app_tile_first_use">Add a profile in the app before using this feature.</string>
@@ -14,7 +14,7 @@
     <string name="pull_down_to_refresh">Please pull down to refresh!</string>
 
     <!-- Notifications -->
-    <string name="notification_channel_service">v2rayNG service</string>
+    <string name="notification_channel_service">Dr VPN service</string>
     <string name="notification_channel_subscription_updates">Subscription updates</string>
     <string name="notification_channel_connection_checks">Connection checks</string>
     <string name="notification_action_stop_v2ray">Stop</string>
@@ -561,4 +561,10 @@
     <string name="connection_test_empty_message">no details available</string>
     <string name="value_unknown">unknown</string>
 
+    <string name="home_tab_home">Home</string>
+    <string name="home_tab_proxies">Proxies</string>
+    <string name="home_tap_to_connect">Tap to connect</string>
+    <string name="home_connected">Connected</string>
+    <string name="home_no_server">No server selected</string>
+    <string name="home_current_server">Server</string>
 </resources>

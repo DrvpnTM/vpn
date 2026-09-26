@@ -32,6 +32,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
@@ -114,7 +115,29 @@ class MainViewModel(
     // ---------- Service events ----------
     init {
         collectServiceEvents()
+        collectSelectedServerName()
         setupGroupTab()
+    }
+
+    /** Resolves the selected server's display name for the home tab; re-resolved after group reloads so edits show up. */
+    private fun collectSelectedServerName() {
+        viewModelScope.launch {
+            _uiState
+                .map { it.selectedGuid to it.groups }
+                .distinctUntilChanged()
+                .collect { (guid, _) ->
+                    val name = if (guid.isNullOrEmpty()) {
+                        ""
+                    } else {
+                        withContext(ioDispatcher) {
+                            runCatching { dataSource.decodeServerConfig(guid)?.remarks.orEmpty() }
+                                .onFailure { LogUtil.e(AppConfig.TAG, "Failed to resolve selected server name", it) }
+                                .getOrDefault("")
+                        }
+                    }
+                    _uiState.update { if (it.selectedGuid == guid) it.copy(selectedServerName = name) else it }
+                }
+        }
     }
 
     private fun collectServiceEvents() {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">v2rayNG</string>
-    <string name="app_widget_name">v2rayNG</string>
-    <string name="app_tile_name">v2rayNG</string>
+    <string name="app_name" translatable="false">Dr VPN</string>
+    <string name="app_widget_name">Dr VPN</string>
+    <string name="app_tile_name">Dr VPN</string>
     <string name="app_tile_first_use">Добавьте профиль в приложении перед использованием этой функции.</string>
     <string name="navigation_drawer_open">Открыть панель навигации</string>
     <string name="navigation_drawer_close">Закрыть панель навигации</string>
@@ -14,7 +14,7 @@
     <string name="pull_down_to_refresh">Потяните вниз для обновления!</string>
 
     <!-- Notifications -->
-    <string name="notification_channel_service">Служба v2rayNG</string>
+    <string name="notification_channel_service">Служба Dr VPN</string>
     <string name="notification_channel_subscription_updates">Обновления подписок</string>
     <string name="notification_channel_connection_checks">Проверки соединения</string>
     <string name="notification_action_stop_v2ray">Остановить</string>
@@ -565,4 +565,10 @@
     <string name="connection_test_empty_message">подробности отсутствуют</string>
     <string name="value_unknown">неизвестно</string>
 
+    <string name="home_tab_home">Главная</string>
+    <string name="home_tab_proxies">Прокси</string>
+    <string name="home_tap_to_connect">Нажмите, чтобы подключиться</string>
+    <string name="home_connected">Подключено</string>
+    <string name="home_no_server">Сервер не выбран</string>
+    <string name="home_current_server">Сервер</string>
 </resources>

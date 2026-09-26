@@ -20,6 +20,7 @@ data class MainUiState(
     val groups: List<GroupMapItem> = emptyList(),
     val selectedGroupId: String = "",
     val selectedGuid: String? = null,
+    val selectedServerName: String = "",
     val isRunning: Boolean = false,
     val isTesting: Boolean = false,
     val status: MainStatus = MainStatus.Disconnected,
