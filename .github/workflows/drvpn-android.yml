@@ -1,0 +1,74 @@
+name: Build Dr VPN APK
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'DRVPNApp/**'
+      - '.github/workflows/drvpn-android.yml'
+
+permissions:
+  contents: read
+
+env:
+  # AndroidLibXrayLite release matching the upstream v2rayNG gitlink (d0c6c4a).
+  LIBV2RAY_TAG: v26.9.9
+  NDK_VERSION: 29.0.14206865
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: DRVPNApp
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          log-accepted-android-sdk-licenses: false
+          packages: 'platforms;android-37.0 build-tools;37.0.0 platform-tools'
+
+      - name: Install NDK
+        run: |
+          echo "y" | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --channel=0 --install "ndk;${NDK_VERSION}"
+          echo "NDK_HOME=$ANDROID_HOME/ndk/${NDK_VERSION}" >> "$GITHUB_ENV"
+
+      - name: Build libhevtun
+        run: |
+          bash compile-hevtun.sh
+          cp -r libs V2rayNG/app/
+
+      - name: Download libv2ray.aar
+        run: |
+          mkdir -p V2rayNG/app/libs
+          curl -fsSL -o V2rayNG/app/libs/libv2ray.aar \
+            "https://github.com/2dust/AndroidLibXrayLite/releases/download/${LIBV2RAY_TAG}/libv2ray.aar"
+
+      - name: Build APK
+        working-directory: DRVPNApp/V2rayNG
+        run: |
+          echo "sdk.dir=${ANDROID_HOME}" > local.properties
+          chmod 755 gradlew
+          ./gradlew --no-daemon assemblePlaystoreDebug
+
+      - name: Upload universal APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: DrVPN-universal
+          path: DRVPNApp/V2rayNG/app/build/outputs/apk/playstore/debug/*universal*.apk
+
+      - name: Upload arm64-v8a APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: DrVPN-arm64-v8a
+          path: DRVPNApp/V2rayNG/app/build/outputs/apk/playstore/debug/*arm64-v8a*.apk

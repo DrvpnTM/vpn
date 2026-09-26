@@ -12,8 +12,8 @@
 
 | نوع | لینک |
 |---|---|
-| اشتراک اصلی (متن ساده) | `https://raw.githubusercontent.com/hiddifyTm/vpn/HEAD/sub.txt` |
-| اشتراک Base64 | `https://raw.githubusercontent.com/hiddifyTm/vpn/HEAD/sub_base64.txt` |
+| اشتراک اصلی (متن ساده) | `https://raw.githubusercontent.com/DRVPNTM/vpn/HEAD/sub.txt` |
+| اشتراک Base64 | `https://raw.githubusercontent.com/DRVPNTM/vpn/HEAD/sub_base64.txt` |
 
 ## 📥 منابع اشتراک رایگان دیگر
 
