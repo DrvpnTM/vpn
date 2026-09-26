@@ -1,87 +1,69 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
+# Ignore data and key store files
+*.dat
+*.jks
 
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
+# Ignore output JSON file
+V2rayNG/app/release/output.json
+
+# Ignore IDE and build system directories
 .idea/
+.gradle/
+*.iml
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+# Ignore local properties and DS_Store files
+/local.properties
+.DS_Store
 
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
-.pub-cache/
-.pub/
-/build/
+# Ignore build directories and captures
+/build
+/captures
+V2rayNG/app/build
+V2rayNG/build
+V2rayNG/local.properties
 
-# Web related
-lib/generated_plugin_registrant.dart
-lib/generated/
+# Ignore prebuilt native libraries (built from submodules by compile-hevtun.sh / AndroidLibXrayLite)
+V2rayNG/app/libs
 
-# Symbolication related
-app.*.symbols
+# Ignore APK and AAR files
+*.apk
+*.aar
 
-# Obfuscation related
-app.*.map.json
+# Ignore signing properties
+signing.properties
 
-# Android Studio will place build artifacts here
-/android/app/src/debug
-/android/app/src/profile
-/android/app/src/release
-/logs
-/.vs
-/*.zip
-/dist/*.apk
-/dist/*.exe
-/dist/*.zip
-/dist/*.xcarchive
-/dist/karing_*
-/dist/*+*
-/bind/apple/Libbox.xcframework
-/bind/android/core
-/bind/windows/core
-/bind/linux/core
-ios/karingWidget/VpnServiceHandler.swift
-/.idea/workspace.xml
-/lib/app/private
-/android/app/build
-/.sentry-native
-/dist/ios
-/dist/macos
-/todo.txt
-/android/app/.cxx
-/android/.kotlin
+# Ignore shared object files
+*.so
 
-*.hprof
-/android/build
-CODEBASE_ANALYSIS.md
-IMPLEMENTATION_GUIDE.md
-PLAN5_CONTINUATION.md
-PLAN5_IMPACT_ANALYSIS.md
-REFACTORING_ANALYSIS.md
-REFACTORING_SUMMARY.md
-START_HERE_SINGBOX_SPLIT.md
-TECHNICAL_INVENTORY.md
-build_log.txt
-build_output.txt
-notary_log.json
+# Ignore Google services JSON
+V2rayNG/app/google-services.json
+
+# Additional common Android/Java ignores
+*.log
+*.tmp
+*.bak
+*.swp
+*.orig
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore executable files
+*.exe
+*.dll
+*.obj
+*.o
+*.pyc
+*.pyo
+
+# Ignore files from other IDEs
+.vscode/
+.classpath
+.project
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore OS-specific files
+Thumbs.db
+.DS_Store

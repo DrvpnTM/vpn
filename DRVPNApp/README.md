@@ -1,121 +1,90 @@
-<h1 align="center">
-  <img src="./README_assets/img/mascot.jpg" alt="Karing" width="256" />
-  <br>
-  Karing - Simple & Powerful proxy utility
-  <br>
-</h1>
+# v2rayNG
 
-<h3 align="center">
-A <a href="https://github.com/SagerNet/sing-box">singbox</a> GUI based on <a href="https://github.com/flutter/flutter">flutter</a>.
-</h3>
+A V2Ray client for Android, support [Xray core](https://github.com/XTLS/Xray-core) and [v2fly core](https://github.com/v2fly/v2ray-core)
 
-English | [简体中文](./README_cn.md) | [繁體中文](./README_tw.md) | [日本語](./README_ja.md) | [한국어](./README_ko.md) | [Español](./README_es.md) | [Français](./README_fr.md) | [Deutsch](./README_de.md) | [Italiano](./README_it.md) | [Tiếng Việt](./README_vi.md) | [Türkçe](./README_tr.md) | [Русский](./README_ru.md) | [فارسی](./README_fa.md) | [العربية](./README_ar.md) | [Português](./README_pt.md) | [Português (BR)](./README_pt_BR.md) | [Українська](./README_uk.md) | [Polski](./README_pl.md) | [اردو](./README_ur.md) | [Svenska](./README_sv.md) | [Norsk](./README_no.md) | [Nederlands](./README_nl.md) | [हिन्दी](./README_hi.md) | [Ελληνικά](./README_el.md) | [Dansk](./README_da.md) | [বাংলা](./README_bn.md) | [ไทย](./README_th.md) | [ਪੰਜਾਬੀ](./README_pa.md)
+[![API](https://img.shields.io/badge/API-24%2B-yellow.svg?style=flat)](https://developer.android.com/about/versions/lollipop)
+[![Kotlin Version](https://img.shields.io/badge/Kotlin-2.4.0-blue.svg)](https://kotlinlang.org)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/2dust/v2rayNG)](https://github.com/2dust/v2rayNG/commits/master)
+[![CodeFactor](https://www.codefactor.io/repository/github/2dust/v2rayng/badge)](https://www.codefactor.io/repository/github/2dust/v2rayng)
+[![GitHub Releases](https://img.shields.io/github/downloads/2dust/v2rayNG/latest/total?logo=github)](https://github.com/2dust/v2rayNG/releases)
+[![Chat on Telegram](https://img.shields.io/badge/Chat%20on-Telegram-brightgreen.svg)](https://t.me/v2rayn)
 
-### Note: Karing has not opened any channel related to Karing on any video platform
+---
 
-## Features
-- Compatible with Clash, V2ray/V2fly, Sing-box, Shadowsocks, Sub, Github Subscriptions.
-  - Full `clash` config supported, Partial `clash.meta` config supported.
+## Download / 下载
 
-- A set of routing rules applied to multiple subscription sources automatically selects efficient nodes.
-- Supports custom routing rule groups and node groups.
-  - Customizes default routing rule groups for novice users - ready to use right out of the box.
-  - Built-in geo-IP, geo-site, ACL, and [other rulesets](https://github.com/KaringX/karing-ruleset/)
+Download the latest release here:
 
-- Backup and synchronization, synchronizing multiple devices with a single configuration.
-  - Supports iCloud synchronization [IOS/MacOS].
-  - Supports synchronization within the local area network.
-  - Supports WebDAV.
-  - Supports importing/exporting ZIP files.
+在这里下载最新版本：
 
-- Built-in support for [the modified sing-box core](https://github.com/KaringX/sing-box).
-- Introduces a beginner mode for simpler configuration.
-- Plan to support more platforms.
+[https://github.com/2dust/v2rayNG/releases](https://github.com/2dust/v2rayNG/releases)
 
-## Promotion
-<details>
-<summary>View all promotions
+> [!TIP]
+> v2rayNG is the mobile version. For the desktop version, please visit the v2rayN \
+> v2rayNG 是手机版，电脑版请访问 v2rayN
+>
+> https://github.com/2dust/v2rayN
 
-### 推荐机场
+---
 
-[狗狗加速 —— 技术流机场 Doggygo VPN](https://2.x31415926.top/redir.html?url=aHR0cHM6Ly93d3cuZGc2LnRvcC8jL3JlZ2lzdGVyP2NvZGU9bEZINGlpOUQ=&i=3eb&t=1723644053)
+### Geoip and Geosite
 
-- 高性能海外机场，海外团队，无跑路风险
-- 专属链接注册送 3 天，每天 1G 流量 [免费试用](https://2.x31415926.top/redir.html?url=aHR0cHM6Ly93d3cuZGc2LnRvcC8jL3JlZ2lzdGVyP2NvZGU9bEZINGlpOUQ=&i=3eb&t=1723644053)
-- 优惠套餐每月仅需 15.8 元，160G 流量，年付 8 折
-- 全球首家支持`Hysteria2` 协议，集群负载均衡设计，高速专线，极低延迟，无视晚高峰，4K 秒开
-- 解锁流媒体及 ChatGPT
+- geoip.dat and geosite.dat files are in `Android/data/com.v2ray.ang/files/assets` (path may differ on some Android device)
+- download feature will get enhanced version in this [repo](https://github.com/Loyalsoldier/v2ray-rules-dat) (note: it needs a working proxy)
+- latest official [domain list](https://github.com/Loyalsoldier/v2ray-rules-dat) and [ip list](https://github.com/Loyalsoldier/geoip) can be imported manually
+- possible to use a third-party dat file in the same folder, like [h2y](https://guide.v2fly.org/routing/sitedata.html#%E5%A4%96%E7%BD%AE%E7%9A%84%E5%9F%9F%E5%90%8D%E6%96%87%E4%BB%B6)
 
-[👉更多机场优惠 每日更新](https://2.x31415926.top/)
+More in our [wiki](https://github.com/2dust/v2rayNG/wiki)
 
-</summary>
+### Geoip 与 Geosite
 
-### 🤝VPN Providers Collaboration Announcement
-- 👉[Contact information and forms of cooperation](https://karing.app/blog/isp/cooperation#for-vpn-providers-from-other-regions)👈
-</details>
+- geoip.dat 和 geosite.dat 文件位于 `Android/data/com.v2ray.ang/files/assets`（部分设备路径可能不同）
+- 下载功能将获取该 [仓库](https://github.com/Loyalsoldier/v2ray-rules-dat) 中的增强版本（注意：此功能需要一个可用的代理）
+- 最新官方 [域名列表](https://github.com/Loyalsoldier/v2ray-rules-dat) 和 [IP 列表](https://github.com/Loyalsoldier/geoip) 可手动导入
+- 也可在同一文件夹中使用第三方 dat 文件，例如 [h2y](https://guide.v2fly.org/routing/sitedata.html#%E5%A4%96%E7%BD%AE%E7%9A%84%E5%9F%9F%E5%90%8D%E6%96%87%E4%BB%B6)
 
-## System Requirements
-- Windows >= 10 (64-bit only)
-- Android >= 8 (arm64-v8a, armeabi-v7a)
-- Linux (64-bit only, glibc >= 2.38 for current .deb packages)
-- IOS >= 15
-- MacOS >= 12 (Intel, Apple Silicon)
-- TvOS >= 17
+更多内容请见我们的 [wiki](https://github.com/2dust/v2rayNG/wiki)
 
-## Install
-- **IOS/TvOS AppStore**: (Search Keywords: karing vpn)
-  - https://apps.apple.com/us/app/karing/id6472431552
-- **IOS/TvOS TestFlight**:
-  - https://testflight.apple.com/join/RLU59OsJ
-- **Android**:
-  - [https://karing.app/download](https://karing.app/download)
-  - https://github.com/KaringX/karing/releases/latest
-  - APKPure https://apkpure.com/p/com.nebula.karing
-  - Amazon AppStore https://www.amazon.com/gp/product/B0DJSQDDM8
-- **Windows/Macos/Linux**:
-  - [https://karing.app/download](https://karing.app/download)
-  - https://github.com/KaringX/karing/releases/latest
-  - `brew install karing`
+---
 
-### FAQ
+## Development guide / 开发指南
 
-> [FAQ|en](https://karing.app/en/faq/)
+### Note
+
+- Android project under the V2rayNG folder can be compiled directly in Android Studio, or using the Gradle wrapper. But the v2ray core inside the aar is (probably) outdated.
+- The aar can be compiled from the Golang project [AndroidLibV2rayLite](https://github.com/2dust/AndroidLibV2rayLite) or [AndroidLibXrayLite](https://github.com/2dust/AndroidLibXrayLite). For a quick start, read the guides for [Go Mobile](https://github.com/golang/go/wiki/Mobile) and [Makefiles for Go Developers](https://tutorialedge.net/golang/makefiles-for-go-developers/).
+- v2rayNG can run on Android Emulators. For WSA, VPN permission needs to be granted via `appops set [package name] ACTIVATE_VPN allow`.
+
+### 提示
+
+- V2rayNG 文件夹下的 Android 项目可直接在 Android Studio 中编译，或使用 Gradle wrapper 编译。但 aar 内置的 v2ray core（可能）已过时。
+- aar 可由 Golang 项目 [AndroidLibV2rayLite](https://github.com/2dust/AndroidLibV2rayLite) 或 [AndroidLibXrayLite](https://github.com/2dust/AndroidLibXrayLite) 编译而成。快速入门可参考 [Go Mobile](https://github.com/golang/go/wiki/Mobile) 指南和 [Makefiles for Go Developers](https://tutorialedge.net/golang/makefiles-for-go-developers/)。
+- v2rayNG 可在 Android 模拟器上运行。对于 WSA，需要通过 `appops set [package name] ACTIVATE_VPN allow` 授予 VPN 权限。
+
+---
 
 
-## Screenshots
+## GPG Verification / GPG 签名校验
 
-<div align="center">
-  <img src="./README_assets/demo/home.png" alt="demo1" width="50%" />
-  </br></br>
-  <img src="./README_assets/demo/select_server.png" alt="demo2" width="50%" />
-    </br></br>
-  <img src="./README_assets/demo/connections.png" alt="demo3" width="50%" />
-  </br></br>
-  <img src="./README_assets/demo/setting.png" alt="demo4" width="50%" />
-  </br></br>
-  <img src="./README_assets/demo/routing_group.png" alt="demo5" width="50%" />
-  </br></br>
-  <img src="./README_assets/demo/add_profile_link.png" alt="demo6" width="50%" />
-</div>
+Release files are signed with GPG to verify authenticity and integrity, helping prevent mirror, ISP, or CDN hijacking.
 
-## Contributions
-[welcome to report issue!](https://github.com/KaringX/karing/issues)
+发布文件已使用 GPG 签名，可用于校验文件真实性与完整性，预防镜像站、运营商或 CDN 劫持。
 
-## Donate
-![donate](./README_assets/img/donate-usdt.jpg)
+### Fingerprint / 公钥指纹
 
-## Projects
-### Acknowledgement: Karing was based on or inspired by these projects and so on:
+```text
+7694 5E9F 3E9A 168F 8070 F195 805D 661C
+134D FAF6 8903 C199 463C 31E5 AE90 3AE0
+```
 
-- [flutter](https://flutter.dev/): makes it easy and fast to build beautiful apps for mobile and beyond.
-- [singbox](https://sing-box.sagernet.org/): The universal proxy platform.
-- [Meta-Docs](https://wiki.metacubex.one/config/): Clash.Meta docs
+---
 
-### Karing Team:
-- [Karing](https://karing.app): https://karing.app
-- [Clash Mi](https://clashmi.app/): https://clashmi.app/
-- [sing-poet](https://github.com/KaringX/sing-poet)
+## Community / 社区
 
-## Star History
+Telegram Group / Telegram 群组：
 
-[![Star History Chart](https://star-history.dera.page/svg?repos=KaringX/karing&type=Date)](https://star-history.dera.page/#KaringX/karing&Date)
+[https://t.me/v2rayN](https://t.me/v2rayN)
+
+Telegram Channel / Telegram 频道：
+
+[https://t.me/github_2dust](https://t.me/github_2dust)
