@@ -1,0 +1,27 @@
+display_name: Karing
+package_name: karing
+summary: Karing
+group: Applications/Internet
+vendor: KaringX
+packager: KaringX
+license: Other
+priority: optional
+section: x11
+essential: false
+url: https://drvpn.net
+icon: assets/images/app_icon_256.png
+
+keywords:
+  - Karing
+
+generic_name: Karing
+
+categories:
+  - Applications/Internet
+
+startup_notify: true
+
+# Exclude Debian/Ubuntu-specific libcurl symbol versions (e.g. CURL_OPENSSL_4)
+# to prevent RPM dependency resolution failures on Fedora/RHEL/openSUSE
+spec_macros:
+  - '%global __requires_exclude ^libcurl\\.so\\.4\\(CURL_OPENSSL_.*\\).*$'
