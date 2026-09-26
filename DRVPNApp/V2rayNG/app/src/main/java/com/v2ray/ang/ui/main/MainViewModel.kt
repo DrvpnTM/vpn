@@ -113,11 +113,42 @@ class MainViewModel(
 
     private val initialPageReady = CompletableDeferred<Unit>()
 
+    /** Groups already auto-pinged; cleared when servers are imported or refreshed so new servers get tested. */
+    private val autoPingedGroups: MutableSet<String> = ConcurrentHashMap.newKeySet()
+    private var autoPingWatchJob: Job? = null
+
     // ---------- Service events ----------
     init {
         collectServiceEvents()
         collectSelectedServerName()
+        watchAutoPing()
         setupGroupTab()
+    }
+
+    // ---------- Auto ping (Dr VPN) ----------
+    /**
+     * While servers without ping are hidden, an untested group would look empty, so ping it once automatically.
+     */
+    private fun watchAutoPing() {
+        viewModelScope.launch {
+            _uiState
+                .map { it.selectedGroupId }
+                .distinctUntilChanged()
+                .collect { groupId ->
+                    autoPingWatchJob?.cancel()
+                    autoPingWatchJob = launch {
+                        mutableServerGroupState(groupId).collect { state -> maybeAutoPing(groupId, state) }
+                    }
+                }
+        }
+    }
+
+    private fun maybeAutoPing(groupId: String, state: ServerGroupUiState) {
+        val ui = uiState.value
+        if (ui.showServersWithoutPing || ui.isTesting || groupId != ui.selectedGroupId) return
+        if (state.allRows.isEmpty() || state.rows.isNotEmpty()) return
+        if (!autoPingedGroups.add(groupId)) return
+        testAllRealPing()
     }
 
     /** Resolves the selected server's display name for the home tab; re-resolved after group reloads so edits show up. */
@@ -301,7 +332,10 @@ class MainViewModel(
     fun onAction(action: MainAction) {
         when (action) {
             MainAction.Initialize -> initialize()
-            MainAction.RefreshGroups -> setupGroupTab(forceRefresh = true)
+            MainAction.RefreshGroups -> {
+                autoPingedGroups.clear()
+                setupGroupTab(forceRefresh = true)
+            }
             MainAction.TestAllServers -> testAllRealPing(true)
             MainAction.TestRealAllServers -> testAllRealPing()
             MainAction.CancelTesting -> cancelAllPing()
@@ -435,6 +469,8 @@ class MainViewModel(
         groupUiFlows.values.forEach { flow ->
             flow.update { current -> current.copy(rows = visibleRows(current.allRows)) }
         }
+        val groupId = uiState.value.selectedGroupId
+        maybeAutoPing(groupId, mutableServerGroupState(groupId).value)
     }
 
     private fun buildServerRows(groupId: String, servers: List<ServersCache>): List<ServerRowUiModel> {
@@ -555,6 +591,7 @@ class MainViewModel(
                     val (count, countSub) = dataSource.importBatchConfig(
                         configText, uiState.value.selectedGroupId, true
                     )
+                    if (count > 0 || countSub > 0) autoPingedGroups.clear()
                     when {
                         count > 0 -> {
                             toast(dataSource.getString(R.string.title_import_config_count, count))
@@ -602,6 +639,7 @@ class MainViewModel(
                             toast(dataSource.getString(R.string.title_update_subscription_result, result.configCount, result.successCount, result.failureCount, result.skipCount))
                     }
                     if (result.configCount > 0) {
+                        autoPingedGroups.clear()
                         setupGroupTab(forceRefresh = true)
                         refreshSelectedGuid()
                     }
