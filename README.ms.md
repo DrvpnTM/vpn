@@ -50,8 +50,11 @@ Jika anda hanya mahu satu protokol, tambah pautannya. Semua pautan daripada drvp
 | Shadowsocks | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/ss.txt` |
 | Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
 | Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
+| WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
 
 Config Cloudflare bersambung melalui CDN Cloudflare; setiap pengguna disambungkan ke pusat data Cloudflare yang paling dekat.
+
+Pautan WARP hanya berfungsi dalam Hiddify. IP keluar WARP bergantung pada pusat data Cloudflare yang paling dekat dengan pengguna.
 
 ## 🤖 Untuk bot, crawler dan alat pencari config
 

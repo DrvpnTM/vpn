@@ -25,6 +25,9 @@ TIMEOUT = 3
 RAW = "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/"
 CLOUDFLARE_SOURCE = SOURCES[0]  # Epodonios
 CLOUDFLARE_COUNT = 50
+WARP_ENDPOINTS_URL = "https://raw.githubusercontent.com/ircfspace/endpoint/main/ip.json"
+WARP_DEFAULT = ["162.159.192.1:2408", "162.159.193.3:2408", "162.159.195.1:2408", "188.114.97.170:894"]
+WARP_NOISE = "ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4"
 CLOUDFLARE_NETS = [ipaddress.ip_network(n) for n in (
     "173.245.48.0/20 103.21.244.0/22 103.22.200.0/22 103.31.4.0/22 141.101.64.0/18 "
     "108.162.192.0/18 190.93.240.0/20 188.114.96.0/20 197.234.240.0/22 198.41.128.0/17 "
@@ -83,6 +86,26 @@ def is_cloudflare(link):
     return any(ip in n for n in CLOUDFLARE_NETS)
 
 
+def warp_links():
+    try:
+        with urllib.request.urlopen(WARP_ENDPOINTS_URL, timeout=30) as r:
+            eps = json.load(r).get("ipv4", [])
+    except Exception as e:
+        print(f"warp endpoints: {e}")
+        eps = []
+    eps = list(dict.fromkeys(WARP_DEFAULT + eps))
+    tag = "drvpn.net"
+    header = [
+        "//profile-title: base64:" + base64.b64encode(b"drvpn.net WARP").decode(),
+        "//profile-update-interval: 1",
+        "//profile-web-page-url: https://drvpntm.github.io/vpn/",
+    ]
+    links = [f"warp://auto/?{WARP_NOISE}#{tag}&&detour=warp://auto#{tag}"]
+    links += [f"warp://@{ep}?{WARP_NOISE}#{tag}" for ep in eps]
+    links += [f"warp://@{ep}?{WARP_NOISE}#{tag}&&detour=warp://@{ep}#{tag}" for ep in eps[:4]]
+    return header, links
+
+
 def rename(link):
     tag = "drvpn.net"
     if link.startswith("vmess://"):
@@ -138,6 +161,12 @@ def main():
     with open("subs/cloudflare.txt", "w") as f:
         f.write("\n".join(cf) + "\n")
     print(f"cloudflare: {len(cf)}")
+
+    header, warp = warp_links()
+    counts["warp"] = len(warp)
+    with open("subs/warp.txt", "w") as f:
+        f.write("\n".join(header + warp) + "\n")
+    print(f"warp: {len(warp)}")
 
     manifest = {
         "name": "drvpn.net free VPN subscription",

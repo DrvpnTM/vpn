@@ -50,8 +50,11 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 | Shadowsocks | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/ss.txt` |
 | Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
 | Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
+| WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
 
 Cloudflare कॉन्फ़िग Cloudflare CDN के माध्यम से जुड़ते हैं; हर उपयोगकर्ता अपने सबसे नज़दीकी Cloudflare डेटा सेंटर से जुड़ता है।
+
+WARP लिंक केवल Hiddify में काम करता है। WARP का आउटपुट IP उपयोगकर्ता के सबसे नज़दीकी Cloudflare डेटा सेंटर पर निर्भर करता है।
 
 ## 🤖 बॉट, क्रॉलर और कॉन्फ़िग-फ़ाइंडर टूल के लिए
 

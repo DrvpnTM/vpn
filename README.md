@@ -55,8 +55,11 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 | Shadowsocks | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/ss.txt` |
 | Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
 | Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
+| WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
 
 کانفیگ‌های Cloudflare از طریق CDN کلودفلر وصل می‌شوند و هر کاربر به نزدیک‌ترین دیتاسنتر کلودفلر در کشور خود (مثلاً قاهره برای مصر) متصل می‌شود.
+
+لینک WARP فقط در برنامه Hiddify کار می‌کند. آی‌پی خروجی WARP مربوط به نزدیک‌ترین دیتاسنتر کلودفلر به کاربر است؛ مثلاً کاربران داخل مصر آی‌پی مصر می‌گیرند.
 
 ## 🤖 برای ربات‌ها، خزنده‌ها و ابزارهای کانفیگ‌یاب
 

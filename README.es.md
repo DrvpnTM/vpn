@@ -50,8 +50,11 @@ Si solo quieres un protocolo, añade su enlace. Todos los enlaces son de drvpn.n
 | Shadowsocks | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/ss.txt` |
 | Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
 | Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
+| WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
 
 Las configs de Cloudflare se conectan a través de la CDN de Cloudflare; cada usuario llega al centro de datos de Cloudflare más cercano.
+
+El enlace WARP solo funciona en Hiddify. La IP de salida de WARP depende del centro de datos de Cloudflare más cercano al usuario.
 
 ## 🤖 Para bots, crawlers y herramientas de búsqueda de configs
 

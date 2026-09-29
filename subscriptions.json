@@ -1,6 +1,6 @@
 {
   "name": "drvpn.net free VPN subscription",
-  "updated": "2026-09-29T20:13:19Z",
+  "updated": "2026-09-29T20:15:25Z",
   "update_interval_minutes": 60,
   "total": 138,
   "subscriptions": {
@@ -11,7 +11,8 @@
     "trojan": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/trojan.txt",
     "ss": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/ss.txt",
     "hysteria2": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt",
-    "cloudflare": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt"
+    "cloudflare": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt",
+    "warp": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt"
   },
   "counts": {
     "vless": 60,
@@ -19,6 +20,7 @@
     "trojan": 20,
     "ss": 20,
     "hysteria2": 18,
-    "cloudflare": 50
+    "cloudflare": 50,
+    "warp": 18
   }
 }

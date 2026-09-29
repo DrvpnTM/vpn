@@ -50,8 +50,11 @@ Protocol တစ်မျိုးတည်းသာ လိုပါက ၎င်
 | Shadowsocks | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/ss.txt` |
 | Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
 | Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
+| WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
 
 Cloudflare config များသည် Cloudflare CDN မှတစ်ဆင့် ချိတ်ဆက်ပြီး အသုံးပြုသူတိုင်း အနီးဆုံး Cloudflare data center သို့ ချိတ်ဆက်သည်။
+
+WARP link သည် Hiddify တွင်သာ အလုပ်လုပ်သည်။ WARP ၏ ထွက် IP သည် အသုံးပြုသူနှင့် အနီးဆုံး Cloudflare data center ပေါ် မူတည်သည်။
 
 ## 🤖 Bot၊ crawler နှင့် config ရှာဖွေရေး tool များအတွက်
 
