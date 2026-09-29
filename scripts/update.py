@@ -100,9 +100,10 @@ def warp_links():
         "//profile-update-interval: 1",
         "//profile-web-page-url: https://drvpntm.github.io/vpn/",
     ]
-    links = [f"warp://auto/?{WARP_NOISE}#{tag}&&detour=warp://auto#{tag}"]
+    # Hiddify chain syntax: "A -> B" means A connects through B (warp-in-warp)
+    links = [f"warp://auto/?{WARP_NOISE}#{tag} -> warp://auto#{tag}"]
     links += [f"warp://@{ep}?{WARP_NOISE}#{tag}" for ep in eps]
-    links += [f"warp://@{ep}?{WARP_NOISE}#{tag}&&detour=warp://@{ep}#{tag}" for ep in eps[:4]]
+    links += [f"warp://@{ep}?{WARP_NOISE}#{tag} -> warp://@{ep}#{tag}" for ep in eps[:4]]
     return header, links
 
 

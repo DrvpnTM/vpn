@@ -1,7 +1,7 @@
 //profile-title: base64:ZHJ2cG4ubmV0IFdBUlA=
 //profile-update-interval: 1
 //profile-web-page-url: https://drvpntm.github.io/vpn/
-warp://auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net&&detour=warp://auto#drvpn.net
+warp://auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net -> warp://auto#drvpn.net
 warp://@162.159.192.1:2408?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net
 warp://@162.159.193.3:2408?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net
 warp://@162.159.195.1:2408?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net
@@ -15,7 +15,7 @@ warp://@162.159.193.3:4500?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net
 warp://@162.159.192.1:500?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net
 warp://@162.159.192.1:1701?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net
 warp://@162.159.192.1:4500?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net
-warp://@162.159.192.1:2408?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net&&detour=warp://@162.159.192.1:2408#drvpn.net
-warp://@162.159.193.3:2408?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net&&detour=warp://@162.159.193.3:2408#drvpn.net
-warp://@162.159.195.1:2408?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net&&detour=warp://@162.159.195.1:2408#drvpn.net
-warp://@188.114.97.170:894?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net&&detour=warp://@188.114.97.170:894#drvpn.net
+warp://@162.159.192.1:2408?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net -> warp://@162.159.192.1:2408#drvpn.net
+warp://@162.159.193.3:2408?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net -> warp://@162.159.193.3:2408#drvpn.net
+warp://@162.159.195.1:2408?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net -> warp://@162.159.195.1:2408#drvpn.net
+warp://@188.114.97.170:894?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net -> warp://@188.114.97.170:894#drvpn.net
