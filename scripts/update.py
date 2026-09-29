@@ -29,8 +29,25 @@ CLOUDFLARE_COUNT = 50
 WARP_ENDPOINTS_URL = "https://raw.githubusercontent.com/ircfspace/endpoint/main/ip.json"
 WARP_DEFAULT = ["162.159.192.1:2408", "162.159.193.3:2408", "162.159.195.1:2408", "188.114.97.170:894"]
 WARP_NOISE = "ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4"
-EGYPT_PROXIES_URL = "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/countries/EG/data.json"
-EGYPT_COUNT = 20
+EGYPT_NETS_URL = "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/eg/ipv4-aggregated.txt"
+_P = "https://raw.githubusercontent.com/"
+EGYPT_PROXY_SOURCES = [  # (protocol, url) — public proxy lists; only Egyptian IPs are kept
+    ("http", _P + "proxifly/free-proxy-list/main/proxies/countries/EG/data.txt"),
+    ("http", _P + "proxifly/free-proxy-list/main/proxies/protocols/http/data.txt"),
+    ("http", _P + "TheSpeedX/PROXY-List/master/http.txt"),
+    ("socks4", _P + "TheSpeedX/PROXY-List/master/socks4.txt"),
+    ("socks5", _P + "TheSpeedX/PROXY-List/master/socks5.txt"),
+    ("http", _P + "ErcinDedeoglu/proxies/main/proxies/http.txt"),
+    ("socks4", _P + "ErcinDedeoglu/proxies/main/proxies/socks4.txt"),
+    ("socks5", _P + "ErcinDedeoglu/proxies/main/proxies/socks5.txt"),
+    ("http", _P + "zloi-user/hideip.me/main/http.txt"),
+    ("http", _P + "mmpx12/proxy-list/master/http.txt"),
+    ("http", _P + "sunny9577/proxy-scraper/master/generated/http_proxies.txt"),
+    ("http", _P + "monosans/proxy-list/main/proxies/http.txt"),
+    ("socks5", _P + "monosans/proxy-list/main/proxies/socks5.txt"),
+    ("http", _P + "vakhov/fresh-proxy-list/master/http.txt"),
+    ("socks5", _P + "vakhov/fresh-proxy-list/master/socks5.txt"),
+]
 CLOUDFLARE_NETS = [ipaddress.ip_network(n) for n in (
     "173.245.48.0/20 103.21.244.0/22 103.22.200.0/22 103.31.4.0/22 141.101.64.0/18 "
     "108.162.192.0/18 190.93.240.0/20 188.114.96.0/20 197.234.240.0/22 198.41.128.0/17 "
@@ -120,6 +137,10 @@ def exit_country(proxy):
             s.sendall(b"CONNECT www.cloudflare.com:443 HTTP/1.1\r\nHost: www.cloudflare.com:443\r\n\r\n")
             if b" 200" not in s.recv(4096).split(b"\r\n")[0]:
                 return None
+        elif kind == "socks4":  # SOCKS4a: let the proxy resolve the name
+            s.sendall(b"\x04\x01" + (443).to_bytes(2, "big") + b"\x00\x00\x00\x01\x00www.cloudflare.com\x00")
+            if s.recv(8)[1:2] != b"\x5a":
+                return None
         else:  # socks5, no auth
             s.sendall(b"\x05\x01\x00")
             if s.recv(2) != b"\x05\x00":
@@ -140,24 +161,43 @@ def exit_country(proxy):
         return None
 
 
-def egypt_links():
+def fetch_text(url):
     try:
-        with urllib.request.urlopen(EGYPT_PROXIES_URL, timeout=30) as r:
-            items = json.load(r)
+        with urllib.request.urlopen(url, timeout=40) as r:
+            return r.read().decode("utf-8", "ignore")
     except Exception as e:
-        print(f"egypt proxies: {e}")
+        print(f"skip {url}: {e}")
+        return ""
+
+
+def egypt_links():
+    nets = [ipaddress.ip_network(l.strip()) for l in fetch_text(EGYPT_NETS_URL).splitlines()
+            if l.strip() and not l.startswith("#")]
+    if not nets:
         return [], []
-    proxies = list(dict.fromkeys(
-        (i["ip"], int(i["port"]), "http" if i["protocol"] == "http" else "socks5")
-        for i in items if i.get("protocol") in ("http", "socks5")))
-    with ThreadPoolExecutor(32) as pool:
+    proxies = {}
+    for kind, url in EGYPT_PROXY_SOURCES:
+        for ip, port in re.findall(r"(\d{1,3}(?:\.\d{1,3}){3}):(\d{2,5})", fetch_text(url)):
+            try:
+                if any(ipaddress.ip_address(ip) in n for n in nets):
+                    proxies[(ip, int(port), kind)] = None
+            except ValueError:
+                pass
+    proxies = list(proxies)
+    print(f"egypt candidates: {len(proxies)}")
+    with ThreadPoolExecutor(128) as pool:
         ok = [p for p, loc in zip(proxies, pool.map(exit_country, proxies)) if loc == "EG"]
+    # one entry per ip:port, preferring http > socks5 > socks4
+    best = {}
+    for h, p, k in sorted(ok, key=lambda x: ("http", "socks5", "socks4").index(x[2])):
+        best.setdefault((h, p), k)
     tag = "drvpn.net"
     # "§hide§" keeps the WARP hop out of Hiddify's server list, so auto/lowest-ping
     # can only pick the Egyptian proxies; one shared WARP identity (p2) for all lines.
     warp = f"warp://p2@auto/?{WARP_NOISE}#{urllib.parse.quote(tag + ' §hide§')}"
+    scheme = {"http": "phttp://{}:{}", "socks5": "socks://{}:{}", "socks4": "socks://{}:{}?v=4a"}
+    direct = [scheme[k].format(h, p) + f"#{tag}" for (h, p), k in best.items()]
     # "A -> B": the Egyptian proxy (A) is the exit, reached through WARP (B)
-    direct = [f"{'phttp' if k == 'http' else 'socks'}://{h}:{p}#{tag}" for h, p, k in ok[:EGYPT_COUNT]]
     return [f"{d} -> {warp}" for d in direct], direct
 
 
