@@ -153,7 +153,9 @@ def egypt_links():
     with ThreadPoolExecutor(32) as pool:
         ok = [p for p, loc in zip(proxies, pool.map(exit_country, proxies)) if loc == "EG"]
     tag = "drvpn.net"
-    warp = f"warp://auto/?{WARP_NOISE}#{tag}"
+    # "§hide§" keeps the WARP hop out of Hiddify's server list, so auto/lowest-ping
+    # can only pick the Egyptian proxies; one shared WARP identity (p2) for all lines.
+    warp = f"warp://p2@auto/?{WARP_NOISE}#{urllib.parse.quote(tag + ' §hide§')}"
     # "A -> B": the Egyptian proxy (A) is the exit, reached through WARP (B)
     return [f"{'phttp' if k == 'http' else 'socks'}://{h}:{p}#{tag} -> {warp}" for h, p, k in ok[:EGYPT_COUNT]]
 
