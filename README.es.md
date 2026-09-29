@@ -23,7 +23,7 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 ## ✨ Características
 
 - ✅ **100% gratis** — sin compras ni registro
-- 🔄 **Actualización automática cada 6 horas** — se eliminan servidores caídos y se añaden nuevos
+- 🔄 **Actualización automática cada 60 minutos** — se eliminan servidores caídos y se añaden nuevos
 - 🧪 **Prueba de conexión** — solo se incluyen servidores accesibles
 - 🌍 Servidores en varios países: VLESS Reality, VMess, Trojan, Shadowsocks, Hysteria2
 
@@ -57,7 +57,7 @@ Sí. Todos los servidores son gratuitos; no necesitas comprar una VPN.
 No. Solo añade el enlace a tu aplicación. Si necesitas un servidor privado y estable, comprar una suscripción de pago a un proveedor de confianza es mejor opción.
 
 **¿Cada cuánto se actualiza?**
-Cada 6 horas. Pulsa **Update subscription** en tu app.
+Cada 60 minutos. Pulsa **Update subscription** en tu app.
 
 **No conecta, ¿qué hago?**
 Actualiza la suscripción y elige el servidor con menor ping; los servidores gratis pueden dejar de funcionar en cualquier momento.

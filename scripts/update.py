@@ -64,8 +64,8 @@ def alive(link):
         return False
 
 
-def rename(link, n):
-    tag = f"FreeVPN-{n}"
+def rename(link):
+    tag = "drvpn.net"
     if link.startswith("vmess://"):
         try:
             d = json.loads(base64.b64decode(link[8:].split("#")[0] + "===").decode())
@@ -94,7 +94,7 @@ def main():
             result += ok[: PER_PROTOCOL[proto]]
             print(f"{proto}: {len(ok[: PER_PROTOCOL[proto]])}/{len(links)}")
 
-    result = [rename(l, i + 1) for i, l in enumerate(result)]
+    result = [rename(l) for l in result]
     body = "\n".join(result) + "\n"
     with open("sub.txt", "w") as f:
         f.write(body)

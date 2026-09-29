@@ -23,7 +23,7 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 ## ✨ 特点
 
 - ✅ **100% 免费** — 无需购买、无需注册
-- 🔄 **每 6 小时自动更新** — 自动删除失效节点、添加新节点
+- 🔄 **每 60 分钟自动更新** — 自动删除失效节点、添加新节点
 - 🧪 **连通性测试** — 只保留可以连接的服务器
 - 🌍 多国家节点：VLESS Reality、VMess、Trojan、Shadowsocks、Hysteria2
 
@@ -57,7 +57,7 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 不需要。直接导入订阅链接即可。如果需要稳定的专属线路，可以考虑向可信的服务商购买付费订阅。
 
 **多久更新一次？**
-每 6 小时更新。请在客户端点击"更新订阅"。
+每 60 分钟更新。请在客户端点击"更新订阅"。
 
 **节点无法连接怎么办？**
 更新订阅并选择延迟最低的节点；免费节点可能随时失效。

@@ -23,7 +23,7 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 ## ✨ Ciri-ciri
 
 - ✅ **100% percuma** — tiada pembelian atau pendaftaran
-- 🔄 **Kemas kini automatik setiap 6 jam** — pelayan rosak dibuang, pelayan baharu ditambah
+- 🔄 **Kemas kini automatik setiap 60 minit** — pelayan rosak dibuang, pelayan baharu ditambah
 - 🧪 **Ujian sambungan** — hanya pelayan yang boleh dicapai disenaraikan
 - 🌍 Pelayan dari pelbagai negara: VLESS Reality, VMess, Trojan, Shadowsocks, Hysteria2
 
@@ -57,7 +57,7 @@ Ya. Semua pelayan percuma; anda tidak perlu membeli VPN.
 Tidak. Hanya tambah pautan ke aplikasi. Jika anda perlukan pelayan peribadi yang stabil, membeli langganan berbayar daripada penyedia yang dipercayai adalah pilihan lebih baik.
 
 **Berapa kerap dikemas kini?**
-Setiap 6 jam. Tekan **Update subscription** dalam aplikasi.
+Setiap 60 minit. Tekan **Update subscription** dalam aplikasi.
 
 **Tidak dapat sambung, apa perlu buat?**
 Kemas kini langganan dan pilih pelayan dengan ping terendah; pelayan percuma boleh berhenti berfungsi bila-bila masa.
