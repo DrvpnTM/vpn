@@ -51,10 +51,13 @@ Jika anda hanya mahu satu protokol, tambah pautannya. Semua pautan daripada drvp
 | Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
 | Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
 | WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
+| 🇪🇬 Egypt IP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt.txt` |
 
 Config Cloudflare bersambung melalui CDN Cloudflare; setiap pengguna disambungkan ke pusat data Cloudflare yang paling dekat.
 
 Pautan WARP hanya berfungsi dalam Hiddify. IP keluar WARP bergantung pada pusat data Cloudflare yang paling dekat dengan pengguna.
+
+Pautan 🇪🇬 Mesir (Hiddify sahaja): proksi awam Mesir yang disambungkan melalui WARP; setiap jam hanya proksi yang benar-benar memberi IP Mesir dikekalkan. Ini proksi awam; jangan gunakan untuk urusan sensitif.
 
 ## 🤖 Untuk bot, crawler dan alat pencari config
 

@@ -51,10 +51,13 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 | Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
 | Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
 | WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
+| 🇪🇬 Egypt IP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt.txt` |
 
 Cloudflare कॉन्फ़िग Cloudflare CDN के माध्यम से जुड़ते हैं; हर उपयोगकर्ता अपने सबसे नज़दीकी Cloudflare डेटा सेंटर से जुड़ता है।
 
 WARP लिंक केवल Hiddify में काम करता है। WARP का आउटपुट IP उपयोगकर्ता के सबसे नज़दीकी Cloudflare डेटा सेंटर पर निर्भर करता है।
+
+🇪🇬 मिस्र लिंक (केवल Hiddify): WARP के माध्यम से जुड़ने वाले मिस्र के सार्वजनिक प्रॉक्सी; हर घंटे केवल वही प्रॉक्सी रखे जाते हैं जो सच में मिस्र का IP देते हैं। ये सार्वजनिक प्रॉक्सी हैं; संवेदनशील कामों के लिए उपयोग न करें।
 
 ## 🤖 बॉट, क्रॉलर और कॉन्फ़िग-फ़ाइंडर टूल के लिए
 

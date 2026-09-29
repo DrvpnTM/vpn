@@ -51,10 +51,13 @@ Protocol တစ်မျိုးတည်းသာ လိုပါက ၎င်
 | Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
 | Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
 | WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
+| 🇪🇬 Egypt IP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt.txt` |
 
 Cloudflare config များသည် Cloudflare CDN မှတစ်ဆင့် ချိတ်ဆက်ပြီး အသုံးပြုသူတိုင်း အနီးဆုံး Cloudflare data center သို့ ချိတ်ဆက်သည်။
 
 WARP link သည် Hiddify တွင်သာ အလုပ်လုပ်သည်။ WARP ၏ ထွက် IP သည် အသုံးပြုသူနှင့် အနီးဆုံး Cloudflare data center ပေါ် မူတည်သည်။
+
+🇪🇬 အီဂျစ် link (Hiddify သာ): WARP မှတစ်ဆင့် ချိတ်ဆက်သော အီဂျစ် အများသုံး proxy များ၊ နာရီတိုင်း အီဂျစ် IP အမှန်တကယ် ပေးသော proxy များကိုသာ ထားရှိသည်။ အများသုံး proxy များဖြစ်၍ အရေးကြီးသော ကိစ္စများအတွက် မသုံးပါနှင့်။
 
 ## 🤖 Bot၊ crawler နှင့် config ရှာဖွေရေး tool များအတွက်
 

@@ -53,10 +53,13 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 | Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
 | Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
 | WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
+| 🇪🇬 Egypt IP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt.txt` |
 
 كونفيجات Cloudflare تتصل عبر شبكة CDN الخاصة بكلاودفلير، ويتصل كل مستخدم بأقرب مركز بيانات لكلاودفلير في بلده (مثل القاهرة لمستخدمي مصر).
 
 رابط WARP يعمل فقط في تطبيق Hiddify. عنوان IP الخارجي لـ WARP يعتمد على أقرب مركز بيانات لكلاودفلير للمستخدم؛ فمثلاً المستخدمون داخل مصر يحصلون على IP مصري.
+
+رابط 🇪🇬 مصر (Hiddify فقط): بروكسيات مصرية عامة تتصل بها عبر WARP؛ كل ساعة نُبقي فقط البروكسيات التي تعطي فعلاً IP مصرياً. هذه بروكسيات عامة؛ لا تستخدمها للعمليات الحساسة.
 
 ## 🤖 للبوتات والزواحف وأدوات جمع الكونفيجات
 

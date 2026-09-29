@@ -51,10 +51,13 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 | Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
 | Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
 | WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
+| 🇪🇬 Egypt IP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt.txt` |
 
 Конфиги Cloudflare подключаются через CDN Cloudflare; каждый пользователь попадает в ближайший к нему дата-центр Cloudflare.
 
 Ссылка WARP работает только в Hiddify. Выходной IP WARP зависит от ближайшего к пользователю дата-центра Cloudflare.
+
+Ссылка 🇪🇬 Египет (только Hiddify): публичные египетские прокси, подключение через WARP; каждый час остаются только прокси, которые действительно дают египетский IP. Это публичные прокси — не используйте их для важных операций.
 
 ## 🤖 Для ботов, краулеров и сборщиков конфигов
 

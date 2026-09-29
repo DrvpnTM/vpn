@@ -51,10 +51,13 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 | Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
 | Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
 | WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
+| 🇪🇬 Egypt IP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt.txt` |
 
 Cloudflare 节点通过 Cloudflare CDN 连接，每个用户会连接到离自己最近的 Cloudflare 数据中心。
 
 WARP 链接仅适用于 Hiddify。WARP 的出口 IP 取决于离用户最近的 Cloudflare 数据中心。
+
+🇪🇬 埃及链接（仅 Hiddify）：通过 WARP 连接的埃及公共代理；每小时只保留出口 IP 确实在埃及的代理。这些是公共代理，请勿用于敏感操作。
 
 ## 🤖 供机器人、爬虫和节点收集工具使用
 

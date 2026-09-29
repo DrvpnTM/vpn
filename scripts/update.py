@@ -7,6 +7,7 @@ import json
 import os
 import re
 import socket
+import ssl
 import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
@@ -28,6 +29,8 @@ CLOUDFLARE_COUNT = 50
 WARP_ENDPOINTS_URL = "https://raw.githubusercontent.com/ircfspace/endpoint/main/ip.json"
 WARP_DEFAULT = ["162.159.192.1:2408", "162.159.193.3:2408", "162.159.195.1:2408", "188.114.97.170:894"]
 WARP_NOISE = "ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4"
+EGYPT_PROXIES_URL = "https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/countries/EG/data.json"
+EGYPT_COUNT = 20
 CLOUDFLARE_NETS = [ipaddress.ip_network(n) for n in (
     "173.245.48.0/20 103.21.244.0/22 103.22.200.0/22 103.31.4.0/22 141.101.64.0/18 "
     "108.162.192.0/18 190.93.240.0/20 188.114.96.0/20 197.234.240.0/22 198.41.128.0/17 "
@@ -107,6 +110,54 @@ def warp_links():
     return header, links
 
 
+def exit_country(proxy):
+    """Tunnel through an HTTP/SOCKS5 proxy to Cloudflare and return the exit country it reports."""
+    host, port, kind = proxy
+    try:
+        s = socket.create_connection((host, port), timeout=8)
+        s.settimeout(10)
+        if kind == "http":
+            s.sendall(b"CONNECT www.cloudflare.com:443 HTTP/1.1\r\nHost: www.cloudflare.com:443\r\n\r\n")
+            if b" 200" not in s.recv(4096).split(b"\r\n")[0]:
+                return None
+        else:  # socks5, no auth
+            s.sendall(b"\x05\x01\x00")
+            if s.recv(2) != b"\x05\x00":
+                return None
+            name = b"www.cloudflare.com"
+            s.sendall(b"\x05\x01\x00\x03" + bytes([len(name)]) + name + (443).to_bytes(2, "big"))
+            if s.recv(10)[1:2] != b"\x00":
+                return None
+        t = ssl.create_default_context().wrap_socket(s, server_hostname="www.cloudflare.com")
+        t.sendall(b"GET /cdn-cgi/trace HTTP/1.1\r\nHost: www.cloudflare.com\r\nConnection: close\r\n\r\n")
+        data = b""
+        while chunk := t.recv(4096):
+            data += chunk
+        t.close()
+        trace = dict(l.split("=", 1) for l in data.decode(errors="ignore").splitlines() if "=" in l)
+        return trace.get("loc")
+    except Exception:
+        return None
+
+
+def egypt_links():
+    try:
+        with urllib.request.urlopen(EGYPT_PROXIES_URL, timeout=30) as r:
+            items = json.load(r)
+    except Exception as e:
+        print(f"egypt proxies: {e}")
+        return []
+    proxies = list(dict.fromkeys(
+        (i["ip"], int(i["port"]), "http" if i["protocol"] == "http" else "socks5")
+        for i in items if i.get("protocol") in ("http", "socks5")))
+    with ThreadPoolExecutor(32) as pool:
+        ok = [p for p, loc in zip(proxies, pool.map(exit_country, proxies)) if loc == "EG"]
+    tag = "drvpn.net"
+    warp = f"warp://auto/?{WARP_NOISE}#{tag}"
+    # "A -> B": the Egyptian proxy (A) is the exit, reached through WARP (B)
+    return [f"{'phttp' if k == 'http' else 'socks'}://{h}:{p}#{tag} -> {warp}" for h, p, k in ok[:EGYPT_COUNT]]
+
+
 def rename(link):
     tag = "drvpn.net"
     if link.startswith("vmess://"):
@@ -168,6 +219,12 @@ def main():
     with open("subs/warp.txt", "w") as f:
         f.write("\n".join(header + warp) + "\n")
     print(f"warp: {len(warp)}")
+
+    egypt = egypt_links()
+    counts["egypt"] = len(egypt)
+    with open("subs/egypt.txt", "w") as f:
+        f.write("\n".join(egypt) + "\n")
+    print(f"egypt: {len(egypt)}")
 
     manifest = {
         "name": "drvpn.net free VPN subscription",
