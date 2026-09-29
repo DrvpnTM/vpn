@@ -43,15 +43,32 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 
 **Streisand / FoXray (آیفون)**: ＋ ← Subscription ← لینک را وارد کنید.
 
-## 📥 منابع دیگر اشتراک رایگان
+## 📥 اشتراک رایگان جداگانه برای هر پروتکل
 
-| منبع | لینک اشتراک |
+اگر فقط یک نوع پروتکل می‌خواهید، لینک همان پروتکل را اضافه کنید. همه این لینک‌ها مخصوص drvpn.net هستند و هر ۶۰ دقیقه به‌روز می‌شوند.
+
+| پروتکل | لینک اشتراک |
 |---|---|
-| Epodonios | `https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt` |
-| barry-far | `https://raw.githubusercontent.com/barry-far/V2ray-Config/main/All_Configs_Sub.txt` |
-| MatinGhanbari | `https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt` |
-| mahdibland | `https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt` |
-| ebrasha | `https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/main/V2Ray-Config-By-EbraSha.txt` |
+| VLESS | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/vless.txt` |
+| VMess | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/vmess.txt` |
+| Trojan | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/trojan.txt` |
+| Shadowsocks | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/ss.txt` |
+| Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
+| Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
+
+کانفیگ‌های Cloudflare از طریق CDN کلودفلر وصل می‌شوند و هر کاربر به نزدیک‌ترین دیتاسنتر کلودفلر در کشور خود (مثلاً قاهره برای مصر) متصل می‌شود.
+
+## 🤖 برای ربات‌ها، خزنده‌ها و ابزارهای کانفیگ‌یاب
+
+همه لینک‌ها در یک فایل JSON ماشین‌خوان هستند. ربات‌های تلگرام، اسکریپت‌ها و ابزارهای کانفیگ‌یاب می‌توانند مستقیم از آن استفاده کنند (بدون نیاز به کلید API، هر ۶۰ دقیقه به‌روز می‌شود):
+
+```
+https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subscriptions.json
+```
+
+```bash
+curl -s https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subscriptions.json
+```
 
 ## ❓ سوالات متداول
 

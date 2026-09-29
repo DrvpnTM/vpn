@@ -38,15 +38,32 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 
 **Shadowrocket / Streisand（iPhone）**：＋ → 类型选择 Subscribe → 填入链接。
 
-## 📥 其他免费订阅来源
+## 📥 按协议分类的免费订阅
 
-| 来源 | 订阅链接 |
+如果只需要某一种协议，请导入对应的链接。所有链接均由 drvpn.net 提供，每 60 分钟更新一次。
+
+| 协议 | 订阅链接 |
 |---|---|
-| Epodonios | `https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt` |
-| barry-far | `https://raw.githubusercontent.com/barry-far/V2ray-Config/main/All_Configs_Sub.txt` |
-| MatinGhanbari | `https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt` |
-| mahdibland | `https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt` |
-| ebrasha | `https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/main/V2Ray-Config-By-EbraSha.txt` |
+| VLESS | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/vless.txt` |
+| VMess | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/vmess.txt` |
+| Trojan | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/trojan.txt` |
+| Shadowsocks | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/ss.txt` |
+| Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
+| Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
+
+Cloudflare 节点通过 Cloudflare CDN 连接，每个用户会连接到离自己最近的 Cloudflare 数据中心。
+
+## 🤖 供机器人、爬虫和节点收集工具使用
+
+所有链接都在一个机器可读的 JSON 文件中，Telegram 机器人、脚本和节点收集工具可以直接使用（无需 API 密钥，每 60 分钟更新）：
+
+```
+https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subscriptions.json
+```
+
+```bash
+curl -s https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subscriptions.json
+```
 
 ## ❓ 常见问题
 

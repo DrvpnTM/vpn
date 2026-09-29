@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """جمع‌آوری کانفیگ‌های رایگان از منابع عمومی، تست اتصال و ساخت فایل اشتراک."""
 import base64
+import datetime
+import ipaddress
 import json
+import os
 import re
 import socket
 import urllib.parse
@@ -19,6 +22,13 @@ PROTOCOLS = ("vless", "vmess", "trojan", "ss", "hysteria2", "hy2")
 PER_PROTOCOL = {"vless": 60, "vmess": 20, "trojan": 20, "ss": 20, "hysteria2": 10, "hy2": 10}
 CANDIDATES = 400
 TIMEOUT = 3
+RAW = "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/"
+CLOUDFLARE_SOURCE = SOURCES[0]  # Epodonios
+CLOUDFLARE_COUNT = 50
+CLOUDFLARE_NETS = [ipaddress.ip_network(n) for n in (
+    "173.245.48.0/20 103.21.244.0/22 103.22.200.0/22 103.31.4.0/22 141.101.64.0/18 "
+    "108.162.192.0/18 190.93.240.0/20 188.114.96.0/20 197.234.240.0/22 198.41.128.0/17 "
+    "162.158.0.0/15 104.16.0.0/13 104.24.0.0/14 172.64.0.0/13 131.0.72.0/22").split()]
 
 
 def fetch(url):
@@ -64,6 +74,15 @@ def alive(link):
         return False
 
 
+def is_cloudflare(link):
+    ep = endpoint(link)
+    try:
+        ip = ipaddress.ip_address(ep[0])
+    except (TypeError, ValueError):
+        return False
+    return any(ip in n for n in CLOUDFLARE_NETS)
+
+
 def rename(link):
     tag = "drvpn.net"
     if link.startswith("vmess://"):
@@ -101,6 +120,40 @@ def main():
     with open("sub_base64.txt", "w") as f:
         f.write(base64.b64encode(body.encode()).decode())
     print(f"total: {len(result)}")
+
+    os.makedirs("subs", exist_ok=True)
+    groups = {"vless": ("vless",), "vmess": ("vmess",), "trojan": ("trojan",),
+              "ss": ("ss",), "hysteria2": ("hysteria2", "hy2")}
+    counts = {}
+    for name, schemes in groups.items():
+        links = [l for l in result if l.split("://")[0] in schemes]
+        counts[name] = len(links)
+        with open(f"subs/{name}.txt", "w") as f:
+            f.write("\n".join(links) + "\n")
+
+    cands = [l for l in fetch(CLOUDFLARE_SOURCE) if is_cloudflare(l)][:CANDIDATES]
+    with ThreadPoolExecutor(64) as pool:
+        cf = [rename(l) for l, a in zip(cands, pool.map(alive, cands)) if a][:CLOUDFLARE_COUNT]
+    counts["cloudflare"] = len(cf)
+    with open("subs/cloudflare.txt", "w") as f:
+        f.write("\n".join(cf) + "\n")
+    print(f"cloudflare: {len(cf)}")
+
+    manifest = {
+        "name": "drvpn.net free VPN subscription",
+        "updated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "update_interval_minutes": 60,
+        "total": len(result),
+        "subscriptions": {
+            "all": RAW + "sub.txt",
+            "all_base64": RAW + "sub_base64.txt",
+            **{name: RAW + f"subs/{name}.txt" for name in counts},
+        },
+        "counts": counts,
+    }
+    with open("subscriptions.json", "w") as f:
+        json.dump(manifest, f, indent=2)
+        f.write("\n")
 
 
 if __name__ == "__main__":

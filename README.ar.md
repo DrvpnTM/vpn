@@ -40,15 +40,32 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 
 **Streisand / FoXray (آيفون)**: ＋ ← Subscription ← الصق الرابط.
 
-## 📥 مصادر اشتراك مجانية أخرى
+## 📥 اشتراك مجاني منفصل لكل بروتوكول
 
-| المصدر | رابط الاشتراك |
+إذا كنت تريد بروتوكولاً واحداً فقط، أضف رابطه. جميع الروابط من drvpn.net وتُحدَّث كل 60 دقيقة.
+
+| البروتوكول | رابط الاشتراك |
 |---|---|
-| Epodonios | `https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt` |
-| barry-far | `https://raw.githubusercontent.com/barry-far/V2ray-Config/main/All_Configs_Sub.txt` |
-| MatinGhanbari | `https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt` |
-| mahdibland | `https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt` |
-| ebrasha | `https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/main/V2Ray-Config-By-EbraSha.txt` |
+| VLESS | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/vless.txt` |
+| VMess | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/vmess.txt` |
+| Trojan | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/trojan.txt` |
+| Shadowsocks | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/ss.txt` |
+| Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
+| Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
+
+كونفيجات Cloudflare تتصل عبر شبكة CDN الخاصة بكلاودفلير، ويتصل كل مستخدم بأقرب مركز بيانات لكلاودفلير في بلده (مثل القاهرة لمستخدمي مصر).
+
+## 🤖 للبوتات والزواحف وأدوات جمع الكونفيجات
+
+جميع الروابط موجودة في ملف JSON قابل للقراءة آلياً، ويمكن لبوتات تيليجرام والسكربتات وأدوات جمع الكونفيجات استخدامه مباشرة (بدون مفتاح API، يُحدَّث كل 60 دقيقة):
+
+```
+https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subscriptions.json
+```
+
+```bash
+curl -s https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subscriptions.json
+```
 
 ## ❓ الأسئلة الشائعة
 

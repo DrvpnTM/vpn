@@ -38,15 +38,32 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 
 **Streisand / FoXray (iPhone)**: ＋ → Subscription → link ကို paste လုပ်ပါ။
 
-## 📥 အခြား အခမဲ့ subscription များ
+## 📥 Protocol အလိုက် အခမဲ့ subscription
 
-| ရင်းမြစ် | Link |
+Protocol တစ်မျိုးတည်းသာ လိုပါက ၎င်း၏ link ကို ထည့်ပါ။ Link အားလုံးကို drvpn.net မှ ပံ့ပိုးပြီး ၆၀ မိနစ်တိုင်း update လုပ်သည်။
+
+| Protocol | Link |
 |---|---|
-| Epodonios | `https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt` |
-| barry-far | `https://raw.githubusercontent.com/barry-far/V2ray-Config/main/All_Configs_Sub.txt` |
-| MatinGhanbari | `https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt` |
-| mahdibland | `https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt` |
-| ebrasha | `https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/main/V2Ray-Config-By-EbraSha.txt` |
+| VLESS | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/vless.txt` |
+| VMess | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/vmess.txt` |
+| Trojan | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/trojan.txt` |
+| Shadowsocks | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/ss.txt` |
+| Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
+| Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
+
+Cloudflare config များသည် Cloudflare CDN မှတစ်ဆင့် ချိတ်ဆက်ပြီး အသုံးပြုသူတိုင်း အနီးဆုံး Cloudflare data center သို့ ချိတ်ဆက်သည်။
+
+## 🤖 Bot၊ crawler နှင့် config ရှာဖွေရေး tool များအတွက်
+
+Link အားလုံးကို စက်ဖြင့်ဖတ်နိုင်သော JSON ဖိုင်တစ်ခုတွင် ထည့်ထားသည်။ Telegram bot၊ script နှင့် config ရှာဖွေရေး tool များက တိုက်ရိုက် အသုံးပြုနိုင်သည် (API key မလို၊ ၆၀ မိနစ်တိုင်း update)-
+
+```
+https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subscriptions.json
+```
+
+```bash
+curl -s https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subscriptions.json
+```
 
 ## ❓ မေးလေ့ရှိသော မေးခွန်းများ
 

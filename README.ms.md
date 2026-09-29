@@ -38,15 +38,32 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 
 **Streisand / FoXray (iPhone)**: ＋ → Subscription → tampal pautan.
 
-## 📥 Sumber langganan percuma lain
+## 📥 Langganan percuma mengikut protokol
 
-| Sumber | Pautan |
+Jika anda hanya mahu satu protokol, tambah pautannya. Semua pautan daripada drvpn.net dan dikemas kini setiap 60 minit.
+
+| Protokol | Pautan |
 |---|---|
-| Epodonios | `https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt` |
-| barry-far | `https://raw.githubusercontent.com/barry-far/V2ray-Config/main/All_Configs_Sub.txt` |
-| MatinGhanbari | `https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt` |
-| mahdibland | `https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt` |
-| ebrasha | `https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/main/V2Ray-Config-By-EbraSha.txt` |
+| VLESS | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/vless.txt` |
+| VMess | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/vmess.txt` |
+| Trojan | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/trojan.txt` |
+| Shadowsocks | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/ss.txt` |
+| Hysteria2 | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt` |
+| Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
+
+Config Cloudflare bersambung melalui CDN Cloudflare; setiap pengguna disambungkan ke pusat data Cloudflare yang paling dekat.
+
+## 🤖 Untuk bot, crawler dan alat pencari config
+
+Semua pautan ada dalam satu fail JSON yang boleh dibaca mesin. Bot Telegram, skrip dan alat pencari config boleh menggunakannya terus (tanpa kunci API, dikemas kini setiap 60 minit):
+
+```
+https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subscriptions.json
+```
+
+```bash
+curl -s https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subscriptions.json
+```
 
 ## ❓ Soalan lazim
 
