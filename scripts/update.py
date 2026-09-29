@@ -146,7 +146,7 @@ def egypt_links():
             items = json.load(r)
     except Exception as e:
         print(f"egypt proxies: {e}")
-        return []
+        return [], []
     proxies = list(dict.fromkeys(
         (i["ip"], int(i["port"]), "http" if i["protocol"] == "http" else "socks5")
         for i in items if i.get("protocol") in ("http", "socks5")))
@@ -157,7 +157,8 @@ def egypt_links():
     # can only pick the Egyptian proxies; one shared WARP identity (p2) for all lines.
     warp = f"warp://p2@auto/?{WARP_NOISE}#{urllib.parse.quote(tag + ' §hide§')}"
     # "A -> B": the Egyptian proxy (A) is the exit, reached through WARP (B)
-    return [f"{'phttp' if k == 'http' else 'socks'}://{h}:{p}#{tag} -> {warp}" for h, p, k in ok[:EGYPT_COUNT]]
+    direct = [f"{'phttp' if k == 'http' else 'socks'}://{h}:{p}#{tag}" for h, p, k in ok[:EGYPT_COUNT]]
+    return [f"{d} -> {warp}" for d in direct], direct
 
 
 def rename(link):
@@ -222,10 +223,14 @@ def main():
         f.write("\n".join(header + warp) + "\n")
     print(f"warp: {len(warp)}")
 
-    egypt = egypt_links()
+    egypt, egypt_direct = egypt_links() or ([], [])
     counts["egypt"] = len(egypt)
+    counts["egypt_direct"] = len(egypt_direct)
     with open("subs/egypt.txt", "w") as f:
         f.write("\n".join(egypt) + "\n")
+    # plain proxies without WARP, for unfiltered networks (e.g. Starlink) and any app
+    with open("subs/egypt_direct.txt", "w") as f:
+        f.write("\n".join(egypt_direct) + "\n")
     print(f"egypt: {len(egypt)}")
 
     manifest = {

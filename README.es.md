@@ -52,6 +52,7 @@ Si solo quieres un protocolo, añade su enlace. Todos los enlaces son de drvpn.n
 | Cloudflare (CDN) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt` |
 | WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
 | 🇪🇬 Egypt IP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt.txt` |
+| 🇪🇬 Egypt IP — direct, no WARP | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt_direct.txt` |
 
 Las configs de Cloudflare se conectan a través de la CDN de Cloudflare; cada usuario llega al centro de datos de Cloudflare más cercano.
 

@@ -11,6 +11,7 @@ SUBS = [("All", "sub.txt"), ("Base64", "sub_base64.txt"), ("VLESS", "subs/vless.
         ("Hysteria2", "subs/hysteria2.txt"), ("Cloudflare", "subs/cloudflare.txt"),
         ("WARP (Hiddify)", "subs/warp.txt"),
         ("🇪🇬 Egypt (Hiddify)", "subs/egypt.txt"),
+        ("🇪🇬 Egypt direct", "subs/egypt_direct.txt"),
         ("JSON (bots)", "subscriptions.json")]
 
 L = {
