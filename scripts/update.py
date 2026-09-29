@@ -29,6 +29,7 @@ CLOUDFLARE_COUNT = 50
 WARP_ENDPOINTS_URL = "https://raw.githubusercontent.com/ircfspace/endpoint/main/ip.json"
 WARP_DEFAULT = ["162.159.192.1:2408", "162.159.193.3:2408", "162.159.195.1:2408", "188.114.97.170:894"]
 WARP_NOISE = "ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4"
+COUNTRY_NETS_URL = "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/{}/ipv4-aggregated.txt"
 EGYPT_NETS_URL = "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/eg/ipv4-aggregated.txt"
 _P = "https://raw.githubusercontent.com/"
 EGYPT_PROXY_SOURCES = [  # (protocol, url) — public proxy lists; only Egyptian IPs are kept
@@ -201,6 +202,33 @@ def egypt_links():
     return [f"{d} -> {warp}" for d in direct], direct
 
 
+def country_configs(links, cc):
+    """V2Ray configs whose server (IP or resolved domain) is in country `cc` and is reachable."""
+    nets = [ipaddress.ip_network(l.strip()) for l in fetch_text(COUNTRY_NETS_URL.format(cc.lower())).splitlines()
+            if l.strip() and not l.startswith("#")]
+    if not nets:
+        return []
+    hosts = {}
+    for link in links:
+        ep = endpoint(link)
+        if ep and ep[0]:
+            hosts.setdefault(ep[0], []).append(link)
+
+    def in_country(host):
+        try:
+            ips = [ipaddress.ip_address(host)]
+        except ValueError:
+            try:
+                ips = {ipaddress.ip_address(a[4][0]) for a in socket.getaddrinfo(host, None, socket.AF_INET)}
+            except (OSError, UnicodeError):
+                return False
+        return any(ip in n for ip in ips for n in nets)
+
+    with ThreadPoolExecutor(128) as pool:
+        found = [l for h, hit in zip(hosts, pool.map(in_country, hosts)) if hit for l in hosts[h]]
+        return [rename(l) for l, a in zip(found, pool.map(alive, found)) if a]
+
+
 def rename(link):
     tag = "drvpn.net"
     if link.startswith("vmess://"):
@@ -223,6 +251,7 @@ def main():
             seen.add(key)
             by_proto[link.split("://")[0]].append(link)
 
+    all_links = [l for links in by_proto.values() for l in links]
     result = []
     with ThreadPoolExecutor(64) as pool:
         for proto, links in by_proto.items():
@@ -272,6 +301,12 @@ def main():
     with open("subs/egypt_direct.txt", "w") as f:
         f.write("\n".join(egypt_direct) + "\n")
     print(f"egypt: {len(egypt)}")
+
+    iraq = country_configs(all_links, "IQ")
+    counts["iraq"] = len(iraq)
+    with open("subs/iraq.txt", "w") as f:
+        f.write("\n".join(iraq) + "\n")
+    print(f"iraq: {len(iraq)}")
 
     manifest = {
         "name": "drvpn.net free VPN subscription",

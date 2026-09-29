@@ -55,6 +55,7 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 | WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
 | 🇪🇬 Egypt IP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt.txt` |
 | 🇪🇬 Egypt IP — direct, no WARP | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt_direct.txt` |
+| 🇮🇶 Iraq servers | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/iraq.txt` |
 
 كونفيجات Cloudflare تتصل عبر شبكة CDN الخاصة بكلاودفلير، ويتصل كل مستخدم بأقرب مركز بيانات لكلاودفلير في بلده (مثل القاهرة لمستخدمي مصر).
 

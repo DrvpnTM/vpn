@@ -53,6 +53,7 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 | WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
 | 🇪🇬 Egypt IP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt.txt` |
 | 🇪🇬 Egypt IP — direct, no WARP | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt_direct.txt` |
+| 🇮🇶 Iraq servers | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/iraq.txt` |
 
 Cloudflare 节点通过 Cloudflare CDN 连接，每个用户会连接到离自己最近的 Cloudflare 数据中心。
 
