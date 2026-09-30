@@ -1,6 +1,6 @@
 {
   "name": "drvpn.net free VPN subscription",
-  "updated": "2026-09-30T00:19:58Z",
+  "updated": "2026-09-30T00:31:18Z",
   "update_interval_minutes": 60,
   "total": 138,
   "subscriptions": {
@@ -13,6 +13,7 @@
     "hysteria2": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/hysteria2.txt",
     "cloudflare": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/cloudflare.txt",
     "warp": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt",
+    "warp_egypt": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp_egypt.txt",
     "egypt": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt.txt",
     "egypt_direct": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt_direct.txt",
     "iraq": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/iraq.txt"
@@ -25,8 +26,9 @@
     "hysteria2": 18,
     "cloudflare": 50,
     "warp": 18,
-    "egypt": 27,
-    "egypt_direct": 27,
+    "warp_egypt": 0,
+    "egypt": 21,
+    "egypt_direct": 21,
     "iraq": 10
   }
 }
