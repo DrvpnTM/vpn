@@ -162,6 +162,63 @@ def exit_country(proxy):
         return None
 
 
+def socks5_udp_ok(proxy):
+    """True if the SOCKS5 proxy relays UDP (checked with a real DNS query to 1.1.1.1)."""
+    host, port = proxy
+    try:
+        c = socket.create_connection((host, port), timeout=8)
+        c.settimeout(8)
+        c.sendall(b"\x05\x01\x00")
+        if c.recv(2) != b"\x05\x00":
+            return False
+        c.sendall(b"\x05\x03\x00\x01\x00\x00\x00\x00\x00\x00")  # UDP ASSOCIATE
+        r = c.recv(64)
+        if len(r) < 10 or r[1] != 0 or r[3] != 1:
+            return False
+        relay_ip = socket.inet_ntoa(r[4:8])
+        if relay_ip in ("0.0.0.0", "127.0.0.1") or relay_ip.startswith(("10.", "192.168.", "172.")):
+            relay_ip = host
+        relay = (relay_ip, int.from_bytes(r[8:10], "big"))
+        query = (b"\x12\x34\x01\x00\x00\x01\x00\x00\x00\x00\x00\x00"
+                 b"\x0acloudflare\x03com\x00\x00\x01\x00\x01")
+        u = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        u.settimeout(6)
+        for _ in range(2):
+            u.sendto(b"\x00\x00\x00\x01" + socket.inet_aton("1.1.1.1") + (53).to_bytes(2, "big") + query, relay)
+            try:
+                data, _ = u.recvfrom(2048)
+            except socket.timeout:
+                continue
+            if len(data) > 12 and data[10:12] == b"\x12\x34":
+                return True
+        return False
+    except Exception:
+        return False
+    finally:
+        try:
+            c.close()
+            u.close()
+        except Exception:
+            pass
+
+
+def warp_egypt_links(pairs):
+    """WARP tunnelled through Egyptian SOCKS5 proxies that relay UDP.
+
+    WARP then connects to Cloudflare from an Egyptian IP, so the exit is a
+    Cloudflare WARP IP located in Egypt.
+    """
+    pairs = list(pairs)
+    with ThreadPoolExecutor(128) as pool:
+        eg = [p for p, loc in zip(pairs, pool.map(lambda x: exit_country((*x, "socks5")), pairs)) if loc == "EG"]
+        ok = [p for p, udp in zip(eg, pool.map(socks5_udp_ok, eg)) if udp]
+    print(f"warp-egypt: socks5 with EG exit {len(eg)}, with UDP {len(ok)}")
+    tag = "drvpn.net"
+    hidden = urllib.parse.quote(tag + " §hide§")
+    # "A -> B": WARP (A) connects through the Egyptian SOCKS5 proxy (B); only WARP is listed
+    return [f"warp://p2@{WARP_DEFAULT[0]}?{WARP_NOISE}#{tag} -> socks://{h}:{p}#{hidden}" for h, p in ok]
+
+
 def fetch_text(url):
     try:
         with urllib.request.urlopen(url, timeout=40) as r:
@@ -175,7 +232,7 @@ def egypt_links():
     nets = [ipaddress.ip_network(l.strip()) for l in fetch_text(EGYPT_NETS_URL).splitlines()
             if l.strip() and not l.startswith("#")]
     if not nets:
-        return [], []
+        return [], [], []
     proxies = {}
     for kind, url in EGYPT_PROXY_SOURCES:
         for ip, port in re.findall(r"(\d{1,3}(?:\.\d{1,3}){3}):(\d{2,5})", fetch_text(url)):
@@ -199,7 +256,8 @@ def egypt_links():
     scheme = {"http": "phttp://{}:{}", "socks5": "socks://{}:{}", "socks4": "socks://{}:{}?v=4a"}
     direct = [scheme[k].format(h, p) + f"#{tag}" for (h, p), k in best.items()]
     # "A -> B": the Egyptian proxy (A) is the exit, reached through WARP (B)
-    return [f"{d} -> {warp}" for d in direct], direct
+    warp_egypt = warp_egypt_links(dict.fromkeys((h, p) for h, p, _ in proxies))
+    return [f"{d} -> {warp}" for d in direct], direct, warp_egypt
 
 
 def country_configs(links, cc):
@@ -292,7 +350,10 @@ def main():
         f.write("\n".join(header + warp) + "\n")
     print(f"warp: {len(warp)}")
 
-    egypt, egypt_direct = egypt_links() or ([], [])
+    egypt, egypt_direct, warp_egypt = egypt_links()
+    counts["warp_egypt"] = len(warp_egypt)
+    with open("subs/warp_egypt.txt", "w") as f:
+        f.write("\n".join(warp_egypt) + "\n")
     counts["egypt"] = len(egypt)
     counts["egypt_direct"] = len(egypt_direct)
     with open("subs/egypt.txt", "w") as f:

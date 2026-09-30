@@ -58,6 +58,7 @@ https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt
 | WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
 | 🇪🇬 Egypt IP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt.txt` |
 | 🇪🇬 Egypt IP — direct, no WARP | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt_direct.txt` |
+| 🇪🇬 WARP Egypt (Cloudflare IP) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp_egypt.txt` |
 | 🇮🇶 Iraq servers | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/iraq.txt` |
 
 کانفیگ‌های Cloudflare از طریق CDN کلودفلر وصل می‌شوند و هر کاربر به نزدیک‌ترین دیتاسنتر کلودفلر در کشور خود (مثلاً قاهره برای مصر) متصل می‌شود.

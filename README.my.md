@@ -53,6 +53,7 @@ Protocol တစ်မျိုးတည်းသာ လိုပါက ၎င်
 | WARP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp.txt` |
 | 🇪🇬 Egypt IP (Hiddify) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt.txt` |
 | 🇪🇬 Egypt IP — direct, no WARP | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/egypt_direct.txt` |
+| 🇪🇬 WARP Egypt (Cloudflare IP) | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/warp_egypt.txt` |
 | 🇮🇶 Iraq servers | `https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/subs/iraq.txt` |
 
 Cloudflare config များသည် Cloudflare CDN မှတစ်ဆင့် ချိတ်ဆက်ပြီး အသုံးပြုသူတိုင်း အနီးဆုံး Cloudflare data center သို့ ချိတ်ဆက်သည်။
