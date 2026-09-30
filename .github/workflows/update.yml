@@ -16,6 +16,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Install xray-knife (real connection / ping test)
+        run: |
+          curl -sSL -o /tmp/xk.zip https://github.com/lilendian0x00/xray-knife/releases/latest/download/Xray-knife-linux-64.zip
+          unzip -oq /tmp/xk.zip -d /tmp/xk
+          echo "XRAY_KNIFE=/tmp/xk/xray-knife" >> "$GITHUB_ENV"
       - run: python3 scripts/update.py
       - run: |
           git config user.name "github-actions[bot]"

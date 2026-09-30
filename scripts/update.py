@@ -6,7 +6,10 @@ import ipaddress
 import json
 import os
 import re
+import shutil
 import socket
+import subprocess
+import tempfile
 import ssl
 import urllib.parse
 import urllib.request
@@ -23,6 +26,8 @@ PROTOCOLS = ("vless", "vmess", "trojan", "ss", "hysteria2", "hy2")
 PER_PROTOCOL = {"vless": 60, "vmess": 20, "trojan": 20, "ss": 20, "hysteria2": 10, "hy2": 10}
 CANDIDATES = 400
 TIMEOUT = 3
+MAX_DELAY_MS = 4000  # configs slower than this (or not answering at all) are dropped
+XRAY_KNIFE = os.environ.get("XRAY_KNIFE") or shutil.which("xray-knife")
 RAW = "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/"
 CLOUDFLARE_SOURCE = SOURCES[0]  # Epodonios
 CLOUDFLARE_COUNT = 50
@@ -284,7 +289,45 @@ def country_configs(links, cc):
 
     with ThreadPoolExecutor(128) as pool:
         found = [l for h, hit in zip(hosts, pool.map(in_country, hosts)) if hit for l in hosts[h]]
-        return [rename(l) for l, a in zip(found, pool.map(alive, found)) if a]
+    ok = real_test(found)
+    # with xray-knife the exit country is known: keep only configs that really exit in `cc`
+    names = {cc.upper(), {"IQ": "IRAQ", "EG": "EGYPT"}.get(cc.upper(), cc.upper())}
+    locs = {l: str(ok[l][1]).strip().upper() for l in ok}
+    print(f"{cc}: real-tested {len(found)}, working {len(ok)}, exit countries {sorted(set(locs.values()))[:15]}")
+    keep = [l for l in ok if locs[l] in names] if XRAY_KNIFE else list(ok)
+    return [rename(l) for l in sorted(keep, key=lambda l: ok[l][0])]
+
+
+def real_test(links, max_delay=MAX_DELAY_MS):
+    """Connect through every config for real and return {link: (delay_ms, exit_country)}.
+
+    Uses xray-knife (xray/sing-box cores). Without it (local runs) falls back to a TCP check.
+    """
+    links = list(dict.fromkeys(links))
+    if not links:
+        return {}
+    if not XRAY_KNIFE:
+        with ThreadPoolExecutor(64) as pool:
+            return {l: (0, None) for l, a in zip(links, pool.map(alive, links)) if a}
+    with tempfile.TemporaryDirectory() as d:
+        src, out = os.path.join(d, "in.txt"), os.path.join(d, "out.jsonl")
+        with open(src, "w") as f:
+            f.write("\n".join(links) + "\n")
+        subprocess.run([XRAY_KNIFE, "http", "-f", src, "-o", out, "-x", "jsonl", "--quiet",
+                        "-d", str(max_delay), "-t", "100", "--prescan", "--diagnose=false",
+                        "--dedup-semantic=false", "-u", "https://cp.cloudflare.com/cdn-cgi/trace"],
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=1200, check=False)
+        passed = {}
+        if os.path.exists(out):
+            for line in open(out):
+                try:
+                    r = json.loads(line)
+                except ValueError:
+                    continue
+                if r.get("status") == "passed" and 0 < r.get("delay", -1) <= max_delay:
+                    loc = r.get("location")
+                    passed[r["link"]] = (r["delay"], None if loc in (None, "null") else loc)
+    return passed
 
 
 def rename(link):
@@ -310,13 +353,13 @@ def main():
             by_proto[link.split("://")[0]].append(link)
 
     all_links = [l for links in by_proto.values() for l in links]
+    tested = real_test(l for links in by_proto.values() for l in links[:CANDIDATES])
+    print(f"real test: {len(tested)} working configs (xray-knife: {bool(XRAY_KNIFE)})")
     result = []
-    with ThreadPoolExecutor(64) as pool:
-        for proto, links in by_proto.items():
-            cands = links[:CANDIDATES]
-            ok = [l for l, a in zip(cands, pool.map(alive, cands)) if a]
-            result += ok[: PER_PROTOCOL[proto]]
-            print(f"{proto}: {len(ok[: PER_PROTOCOL[proto]])}/{len(links)}")
+    for proto, links in by_proto.items():
+        ok = sorted((l for l in links[:CANDIDATES] if l in tested), key=lambda l: tested[l][0])
+        result += ok[: PER_PROTOCOL[proto]]
+        print(f"{proto}: {len(ok[: PER_PROTOCOL[proto]])} kept, {len(ok)} working / {len(links)}")
 
     result = [rename(l) for l in result]
     body = "\n".join(result) + "\n"
@@ -337,8 +380,8 @@ def main():
             f.write("\n".join(links) + "\n")
 
     cands = [l for l in fetch(CLOUDFLARE_SOURCE) if is_cloudflare(l)][:CANDIDATES]
-    with ThreadPoolExecutor(64) as pool:
-        cf = [rename(l) for l, a in zip(cands, pool.map(alive, cands)) if a][:CLOUDFLARE_COUNT]
+    cf_ok = real_test(cands)
+    cf = [rename(l) for l in sorted(cf_ok, key=lambda l: cf_ok[l][0])][:CLOUDFLARE_COUNT]
     counts["cloudflare"] = len(cf)
     with open("subs/cloudflare.txt", "w") as f:
         f.write("\n".join(cf) + "\n")
