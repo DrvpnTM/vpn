@@ -1,12 +1,10 @@
-phttp://41.65.55.27:1981#drvpn.net
 phttp://41.33.60.42:8081#drvpn.net
-phttp://196.204.3.21:1981#drvpn.net
+phttp://154.236.179.229:1981#drvpn.net
+phttp://45.240.232.62:8080#drvpn.net
 phttp://41.128.90.53:1976#drvpn.net
-phttp://41.65.71.147:1981#drvpn.net
-phttp://197.164.101.13:1976#drvpn.net
+phttp://41.196.16.226:1976#drvpn.net
 phttp://197.164.101.10:1981#drvpn.net
-phttp://41.128.72.143:1976#drvpn.net
+phttp://41.128.72.140:1981#drvpn.net
 phttp://156.200.116.67:8080#drvpn.net
-phttp://41.33.245.139:1981#drvpn.net
 phttp://41.128.90.53:1981#drvpn.net
 phttp://213.131.85.26:1976#drvpn.net
