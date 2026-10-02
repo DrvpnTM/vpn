@@ -1,3 +1,4 @@
-phttp://196.204.3.21:1981#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
-phttp://45.240.232.62:8080#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
-phttp://41.33.60.42:8081#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
+phttp://45.240.232.61:8080#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
+phttp://41.128.90.53:1976#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
+phttp://41.128.72.138:1981#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
+phttp://156.200.116.67:8080#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
