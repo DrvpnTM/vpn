@@ -1,9 +1,5 @@
 phttp://41.128.77.76:1976#drvpn.net
-phttp://197.164.101.14:1981#drvpn.net
-phttp://196.204.3.21:1981#drvpn.net
 phttp://156.200.116.67:8080#drvpn.net
 phttp://197.164.101.10:1981#drvpn.net
-phttp://84.36.141.180:1976#drvpn.net
 phttp://41.128.90.53:1976#drvpn.net
-phttp://154.236.179.229:1981#drvpn.net
 phttp://41.128.90.53:1981#drvpn.net
