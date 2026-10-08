@@ -1,8 +1,11 @@
-phttp://41.33.245.138:1981#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
+phttp://196.204.26.243:1976#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
+phttp://84.36.141.180:1976#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
+phttp://41.65.103.168:8080#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
+phttp://196.204.26.243:1981#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
+phttp://197.164.101.13:1981#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
 phttp://41.65.55.27:1976#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
-phttp://196.204.83.232:1976#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
+phttp://41.65.162.72:1981#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
 phttp://196.204.83.232:1981#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
-phttp://41.65.55.27:1981#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
-phttp://62.193.118.57:1981#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
-phttp://41.128.90.52:1976#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
-phttp://213.131.85.30:1976#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
+phttp://197.164.101.14:1981#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
+phttp://41.128.90.53:1981#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
+phttp://41.128.90.53:1976#drvpn.net -> warp://p2@auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#drvpn.net%20%C2%A7hide%C2%A7
