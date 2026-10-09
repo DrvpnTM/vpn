@@ -1,9 +1,11 @@
 hysteria2://dongtaiwang.com@142.249.37.90:44356/?sni=hy2.561891.xyz#drvpn.net
-hysteria2://dongtaiwang.com@hy2.561891.xyz:44356/?sni=hy2.561891.xyz#drvpn.net
 hysteria2://bce6c821-200d-421f-bf3d-7159e5246ea0@hy2.123266.xyz:33333/?sni=hy2.123266.xyz#drvpn.net
-hysteria2://77f73bd5-51bf-4143-8ebd-02f56ba376f4@177.1.195.242:24000?security=tls&obfs=salamander&obfs-password=9VK3Nqd0bcXGPxcay9hRLY28HBtKo5&insecure=0&mport=24000-24999&sni=hy.kirian.su#drvpn.net
+hysteria2://dongtaiwang.com@hy2.561891.xyz:44356/?sni=hy2.561891.xyz#drvpn.net
+hysteria2://capadmbd5f18bd:jX4BuciLLIqLvzJZsHpoXtc2@51.77.217.70:8445?mport=22000-22199,34000-34199&obfs=salamander&obfs-password=ChY5QQQT3ZtUdNT8&sni=vpn.local&insecure=1#drvpn.net
 hysteria2://p7Q76LzlnS4hIzr1W3staBOnUe_WwSkR@130.49.161.70:443?security=tls&obfs=salamander&obfs-password=rG07s3COMIEvdnQipRyWzx_H_2xygNC3&insecure=0&sni=hy2.aspidnet.xyz#drvpn.net
+hysteria2://77f73bd5-51bf-4143-8ebd-02f56ba376f4@177.1.195.242:24000?security=tls&obfs=salamander&obfs-password=9VK3Nqd0bcXGPxcay9hRLY28HBtKo5&insecure=0&mport=24000-24999&sni=hy.kirian.su#drvpn.net
 hysteria2://QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s@162.249.125.133:443?security=tls&obfs=salamander&obfs-password=c1b4086fea89914496c7e10967a419216566&insecure=0&sni=hy2-new.aspidnet.xyz#drvpn.net
+hysteria2://033dc6b532@77.232.139.128:11592/?obfs=salamander&obfs-password=eba1b4766d2a26d6c167e2d2e9efabf4&sni=srv-8718e6.frd21.ru#drvpn.net
 hysteria2://77f73bd5-51bf-4143-8ebd-02f56ba376f4@79.137.206.157:21000?security=tls&obfs=salamander&obfs-password=9VK3Nqd0bcXGPxcay9hRLY28HBtKo5&insecure=0&mport=21000-21999&sni=hy.kirian.su#drvpn.net
 hy2://H7mP2xY9kJ4nQ8wR5tF6vB3z@103.115.109.49:443/?insecure=1&sni=https%3A%2F%2Ft.me%2Foneclickvpnkeys#drvpn.net
 hy2://H7mP2xY9kJ4nQ8wR5tF6vB3z@202.146.222.29:443/?insecure=1&sni=202.146.222.29#drvpn.net
