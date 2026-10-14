@@ -1,20 +1,20 @@
-trojan://humanity@212.183.88.136:443?path=/assignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#drvpn.net
-trojan://humanity@141.193.213.172:443?path=/assignment&security=tls&host=www.calmlunch.com&type=ws&sni=www.calmlunch.com#drvpn.net
-trojan://humanity@162.159.244.91:443?path=/assignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#drvpn.net
-trojan://humanity@104.16.72.41:443?path=/assignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#drvpn.net
-trojan://humanity@212.183.88.136:443?path=/assignment&security=tls&insecure=0&type=ws&allowInsecure=0&sni=www.calmlunch.com#drvpn.net
-trojan://humanity@172.64.152.23:443?path=/assignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com&note=@FreeOnlineVPN#drvpn.net
-trojan://humanity@www.calmlunch.com:443?path=/assignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#drvpn.net
-trojan://humanity@188.114.97.6:443?path=/assignment&security=tls&alpn=http/1.1&fm={"tcp":[{"type":"fragment","settings":{"packets":"tlshello","lengths":["0","104"]}}]}&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#drvpn.net
-trojan://humanity@188.114.97.6:443?path=/assignment&security=tls&alpn=http/1.1&insecure=0&host=www.pleadcourt.org&type=ws&allowInsecure=0&sni=www.pleadcourt.org#drvpn.net
-trojan://humanity@104.21.33.59:443?path=/assignment&security=tls&alpn=http/1.1&insecure=0&type=ws&allowInsecure=0&sni=www.pleadcourt.org#drvpn.net
-trojan://humanity@45.80.111.7:443?path=/assignment&security=tls&insecure=0&fp=chrome&type=ws&allowInsecure=0&sni=www.calmlunch.com#drvpn.net
-trojan://humanity@104.17.44.17:443?path=/assignment&security=tls&alpn=http/1.1&fm={"tcp": [{"type": "fragment", "settings": {"packets": "tlshello", "lengths": ["0", "104", "1"], "delays": ["0"], "maxSplit": "0"}},{"type": "fragment", "settings": {"packets": "1-1", "lengths": ["114", "1"], "delays": ["1"], "maxSplit": "11"}}]}&insecure=0&host=www.pleadcourt.org&type=ws&allowInsecure=0&sni=www.pleadcourt.org#drvpn.net
-trojan://humanity@104.18.32.47:443?security=tls&sni=www.calmlunch.com&insecure=0&allowInsecure=0&type=ws&path=/assignment&note=@FreeOnlineVPN#drvpn.net
-trojan://humanity@104.18.9.83:443?path=/assignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#drvpn.net
-trojan://humanity@8.47.69.0:443?path=/assignment&security=tls&alpn=http/1.1&host=www.pleadcourt.org&fp=chrome&type=ws&sni=www.pleadcourt.org#drvpn.net
-trojan://humanity@8.47.69.0:443?path=/assignment&security=tls&alpn=http/1.1&insecure=0&host=www.pleadcourt.org&type=ws&allowInsecure=0&sni=www.pleadcourt.org#drvpn.net
-trojan://humanity@104.17.121.71:443?path=/assignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#drvpn.net
-trojan://humanity@8.47.69.0:443?path=/assignment&security=tls&alpn=http/1.1&insecure=0&host=www.pleadcourt.org&fp=chrome&type=ws&allowInsecure=0&sni=www.pleadcourt.org#drvpn.net
 trojan://oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1@109.206.241.10:449?allowInsecure=1#drvpn.net
+trojan://humanity@8.47.69.0:443?security=tls&sni=www.pleadcourt.org&type=ws&host=www.pleadcourt.org&path=/assignment#drvpn.net
+trojan://humanity@8.47.69.0:443?path=/assignment&security=tls&alpn=http/1.1&insecure=0&host=www.pleadcourt.org&type=ws&allowInsecure=0&sni=www.pleadcourt.org#drvpn.net
 trojan://humanity@190.93.245.148:443?path=/assignment&security=tls&insecure=0&host=www.pleadcourt.org&type=ws&allowInsecure=0&sni=www.pleadcourt.org#drvpn.net
+trojan://humanity@104.18.35.86:443?path=/assignment&security=tls&alpn=http/1.1&fm={"tcp":[{"type":"fragment","settings":{"packets":"tlshello","lengths":["0","104"]}}]}&insecure=0&host=www.volumerOot.coM.&type=ws&allowInsecure=0&sni=www.volumerOot.coM.#drvpn.net
+trojan://humanity@188.226.181.61:443?path=/assignment&security=tls&alpn=http/1.1&insecure=0&host=www.pleadcourt.org&fp=chrome&type=ws&allowInsecure=0&sni=www.pleadcourt.org#drvpn.net
+trojan://humanity@45.87.41.18:443?path=/assignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#drvpn.net
+trojan://mitivpn@199.232.78.160:443?pcs=cd6e838b9bfe31cab8b3d5c858b0d6223fe84ece236c1fdb281be93c302e1e6e&path=/ bored_vpn&security=tls&alpn=http/1.1&insecure=0&host=mitivpn-s1.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=www.google.com#drvpn.net
+trojan://humanity@104.21.33.59:443?path=/assignment&security=tls&alpn=http/1.1&insecure=0&fp=unsafe&type=ws&allowInsecure=0&sni=www.pleadcourt.org#drvpn.net
+trojan://humanity@104.21.33.59:443?path=/assignment&security=tls&alpn=http/1.1&insecure=0&type=ws&allowInsecure=0&sni=www.pleadcourt.org#drvpn.net
+trojan://humanity@188.114.98.0:443?security=tls&sni=www.volumeroot.com&alpn=http/1.1&fp=chrome&type=ws&host=www.volumeroot.com&path=/assignment#drvpn.net
+trojan://humanity@31.57.190.34:443?path=/assignment&security=tls&alpn=http/1.1&fm=tlshello-0-len&insecure=0&host=www.pleadcourt.org&fp=unsafe&type=ws&allowInsecure=0&sni=www.pleadcourt.org#drvpn.net
+trojan://humanity@144.31.205.106:443?security=tls&sni=www.volumeroot.com&type=ws&path=/assignment&Host=www.volumeroot.com#drvpn.net
+trojan://humanity@104.21.37.56:443?path=/assignment&security=tls&alpn=http/1.1&fm={"tcp": [{"type": "fragment", "settings": {"packets": "tlshello", "lengths": ["0", "104", "1"], "delays": ["0"], "maxSplit": "0"}},{"type": "fragment", "settings": {"packets": "1-1", "lengths": ["114", "1"], "delays": ["1"], "maxSplit": "11"}}]}&insecure=0&host=www.volumeroot.com&type=ws&allowInsecure=0&sni=www.volumeroot.com#drvpn.net
+trojan://humanity@185.255.179.166:443?path=/assignment&security=tls&insecure=0&host=www.calmlunch.com&type=ws&allowInsecure=0&sni=www.calmlunch.com#drvpn.net
+trojan://Trojan@82164024@kr.tronsg.com:443?allowInsecure=1&sni=kr.tronsg.com#drvpn.net
+trojan://mitivpn@199.232.78.160:443?pcs=cd6e838b9bfe31cab8b3d5c858b0d6223fe84ece236c1fdb281be93c302e1e6e&path=/ mehrosaboran&security=tls&alpn=http/1.1&insecure=0&host=mitivpn-s1.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=www.google.com#drvpn.net
+trojan://humanity@46.62.204.134:443?path=/assignment&security=tls&alpn=http/1.1&fm=tlshello-0-len&insecure=0&host=www.pleadcourt.org&fp=unsafe&type=ws&allowInsecure=0&sni=www.pleadcourt.org#drvpn.net
+trojan://humanity@94.158.219.126:443?path=/assignment&security=tls&insecure=0&host=www.pleadcourt.org&type=ws&allowInsecure=0&sni=www.pleadcourt.org#drvpn.net
+trojan://mitivpn@146.75.57.238:443?pcs=cd6e838b9bfe31cab8b3d5c858b0d6223fe84ece236c1fdb281be93c302e1e6e&path=/&security=tls&alpn=http/1.1&insecure=0&host=mitivpn-s1.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=google.com#drvpn.net
