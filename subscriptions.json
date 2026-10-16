@@ -1,8 +1,8 @@
 {
   "name": "drvpn.net free VPN subscription",
-  "updated": "2026-10-16T04:26:43Z",
+  "updated": "2026-10-16T05:25:55Z",
   "update_interval_minutes": 60,
-  "total": 132,
+  "total": 130,
   "subscriptions": {
     "all": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub.txt",
     "all_base64": "https://raw.githubusercontent.com/DrvpnTM/vpn/HEAD/sub_base64.txt",
@@ -23,12 +23,12 @@
     "vmess": 20,
     "trojan": 20,
     "ss": 20,
-    "hysteria2": 12,
-    "cloudflare": 45,
+    "hysteria2": 10,
+    "cloudflare": 44,
     "warp": 18,
     "warp_egypt": 0,
-    "egypt": 19,
-    "egypt_direct": 19,
+    "egypt": 25,
+    "egypt_direct": 25,
     "iraq": 0
   }
 }
