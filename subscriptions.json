@@ -1,6 +1,6 @@
 {
   "name": "drvpn.net free VPN subscription",
-  "updated": "2026-10-18T19:20:52Z",
+  "updated": "2026-10-18T20:19:16Z",
   "update_interval_minutes": 60,
   "total": 89,
   "subscriptions": {
@@ -24,11 +24,11 @@
     "trojan": 20,
     "ss": 20,
     "hysteria2": 13,
-    "cloudflare": 21,
+    "cloudflare": 7,
     "warp": 18,
     "warp_egypt": 0,
-    "egypt": 21,
-    "egypt_direct": 21,
+    "egypt": 33,
+    "egypt_direct": 33,
     "iraq": 0
   }
 }
