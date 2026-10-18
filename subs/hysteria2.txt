@@ -1,8 +1,8 @@
 hysteria2://dongtaiwang.com@142.249.37.90:44356?security=tls&insecure=0&sni=hy2.561891.xyz#drvpn.net
-hysteria2://dongtaiwang.com@142.249.37.90:44356/?sni=hy2.561891.xyz#drvpn.net
-hysteria2://dongtaiwang.com@hy2.561891.xyz:44356?security=tls&insecure=0&sni=hy2.561891.xyz#drvpn.net
 hysteria2://dongtaiwang.com@hy2.561891.xyz:44356/?sni=hy2.561891.xyz#drvpn.net
+hysteria2://dongtaiwang.com@142.249.37.90:44356/?sni=hy2.561891.xyz#drvpn.net
 hysteria2://bce6c821-200d-421f-bf3d-7159e5246ea0@hy2.123266.xyz:33333/?sni=hy2.123266.xyz#drvpn.net
+hysteria2://dongtaiwang.com@hy2.561891.xyz:44356?security=tls&insecure=0&sni=hy2.561891.xyz#drvpn.net
 hysteria2://capadmbd5f18bd:jX4BuciLLIqLvzJZsHpoXtc2@51.77.217.70:21000-21199,33000-33199/?insecure=1&obfs=salamander&obfs-password=ChY5QQQT3ZtUdNT8&sni=vpn.local#drvpn.net
 hysteria2://capadm96216165:nXUv9sPkKFsDMmhZ7jbE28sw@208.69.78.217:33025?sni=vpn.local&obfs=salamander&obfs-password=mbQXP2ASuHbF6ZPq&insecure=1#drvpn.net
 hysteria2://3a702d4d1de4949005d8431220e040fb@152.67.75.161:443/?insecure=1&obfs=salamander&obfs-password=c13f29db6a638ad2b211b9ce2669ef27&sni=www.bing.com#drvpn.net
