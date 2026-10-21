@@ -4,6 +4,7 @@ hysteria2://QCgqi_I4EkV8UR-OgQ_tG4EnVTEVvIyR2GgRBzrIn2s@162.249.125.133:443?secu
 hysteria2://eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ@nas.aizhzo.com:5010?security=tls&obfs=salamander&obfs-password=7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9&insecure=0&sni=nas.aizhzo.com#drvpn.net
 hysteria2://Telegram-vpnjey@77.110.96.201:36264?sni=se.vpnjey2.dpdns.org&alpn=h3&obfs=salamander&obfs-password=Telegram@vpnjey&insecure=1#drvpn.net
 hysteria2://capadm96216165:nXUv9sPkKFsDMmhZ7jbE28sw@208.69.78.217:33025?sni=vpn.local&obfs=salamander&obfs-password=mbQXP2ASuHbF6ZPq&insecure=1#drvpn.net
+hy2://c8ed6cd1-6566-4f7a-819e-1c55b2b360c9@153.56.210.134:34121/?insecure=1&sni=www.bing.com&obfs=salamander&obfs-password=9a33460c-b037-47aa-a606-d04211f4e0ec#drvpn.net
 hy2://H7mP2xY9kJ4nQ8wR5tF6vB3z@103.115.109.49:443/?insecure=1&sni=https%3A%2F%2Ft.me%2Foneclickvpnkeys#drvpn.net
-hy2://H7mP2xY9kJ4nQ8wR5tF6vB3z@202.146.222.29:443/?insecure=1&sni=202.146.222.29#drvpn.net
 hy2://H7mP2xY9kJ4nQ8wR5tF6vB3z@vpn-tw-002.fastervpn.world:443/?insecure=1&sni=127.0.0.1#drvpn.net
+hy2://H7mP2xY9kJ4nQ8wR5tF6vB3z@202.146.222.29:443/?insecure=1&sni=202.146.222.29#drvpn.net
