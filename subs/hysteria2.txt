@@ -1,6 +1,7 @@
-hysteria2://VPNJEy@179.61.138.145:36264?sni=de2.jey.cc.cd&insecure=1&obfs=salamander&obfs-password=Telegram@vpnjey#drvpn.net
 hysteria2://eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ@152.32.254.68:5010?security=tls&obfs=salamander&obfs-password=7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9&insecure=0&sni=nas.aizhzo.com#drvpn.net
-hysteria2://oracle_hy2_pass_2026@129.225.181.46:8443?sni=bing.com&insecure=1#drvpn.net
-hy2://H7mP2xY9kJ4nQ8wR5tF6vB3z@103.115.109.49:443/?insecure=1&sni=https%3A%2F%2Ft.me%2Foneclickvpnkeys#drvpn.net
+hysteria2://CyG0RFxMjzs41uQD4OLuHQ==@150.230.229.100:20000?security=tls&obfs=salamander&obfs-password=CyG0RFxMjzs41uQD4OLuHQ==&insecure=0&mport=20000-30000&sni=hy2-br2.whuiy.xyz#drvpn.net
+hysteria2://VPNJEy@179.61.138.145:36264?sni=de2.jey.cc.cd&insecure=1&obfs=salamander&obfs-password=Telegram@vpnjey#drvpn.net
+hysteria2://HowdyHysteria2023w0W@hysteria.udpgw.com:8443/?insecure=1&obfs=salamander&obfs-password=HysteriaHowdy&sni=sni-here.com#drvpn.net
 hy2://H7mP2xY9kJ4nQ8wR5tF6vB3z@202.146.222.29:443/?insecure=1&sni=202.146.222.29#drvpn.net
+hy2://H7mP2xY9kJ4nQ8wR5tF6vB3z@103.115.109.49:443/?insecure=1&sni=https%3A%2F%2Ft.me%2Foneclickvpnkeys#drvpn.net
 hy2://H7mP2xY9kJ4nQ8wR5tF6vB3z@vpn-tw-002.fastervpn.world:443/?insecure=1&sni=127.0.0.1#drvpn.net
