@@ -1,11 +1,10 @@
+hysteria2://HowdyHysteria2023w0W@hysteria.udpgw.com:8443/?insecure=1&obfs=salamander&obfs-password=HysteriaHowdy&sni=sni-here.com#drvpn.net
 hysteria2://NL2026hy@147.45.149.88:8443?security=tls&obfs=salamander&obfs-password=SalamanderNL2026&insecure=0&sni=nl.nobelchat.ru#drvpn.net
 hysteria2://NL2026hy@147.45.149.88:8443/?obfs=salamander&obfs-password=SalamanderNL2026&sni=nl.nobelchat.ru#drvpn.net
-hysteria2://HowdyHysteria2023w0W@hysteria.udpgw.com:8443/?insecure=1&obfs=salamander&obfs-password=HysteriaHowdy&sni=sni-here.com#drvpn.net
-hysteria2://vpNJEy@179.61.138.145:36264?sni=de2.jey.cc.cd&insecure=1&obfs=salamander&obfs-password=Telegram@vpnjey#drvpn.net
-hysteria2://vpNJEy@179.61.138.145:36264/?insecure=1&obfs=salamander&obfs-password=Telegram@vpnjey&sni=de2.jey.cc.cd#drvpn.net
 hysteria2://eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ@152.32.254.68:5010?security=tls&obfs=salamander&obfs-password=7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9&insecure=0&sni=nas.aizhzo.com#drvpn.net
-hy2://6ac6d17d-040c-4fab-940e-8f5d72c3fed6@135.126.21.107:443/?sni=de2-balance.rezproffx.ru#drvpn.net
 hy2://900c8c92-1979-4c7c-8f2f-63e87d53d8fe@128.254.186.57:13337/?insecure=1&sni=mother-earth.fyi#drvpn.net
+hy2://H7mP2xY9kJ4nQ8wR5tF6vB3z@202.146.222.29:443/?insecure=1&sni=202.146.222.29#drvpn.net
 hy2://H7mP2xY9kJ4nQ8wR5tF6vB3z@103.115.109.49:443/?insecure=1&sni=https%3A%2F%2Ft.me%2Foneclickvpnkeys#drvpn.net
 hy2://H7mP2xY9kJ4nQ8wR5tF6vB3z@vpn-tw-002.fastervpn.world:443/?insecure=1&sni=127.0.0.1#drvpn.net
+hy2://6ac6d17d-040c-4fab-940e-8f5d72c3fed6@135.126.21.107:443/?sni=de2-balance.rezproffx.ru#drvpn.net
 hy2://6ac6d17d-040c-4fab-940e-8f5d72c3fed6@135.126.21.106:443/?sni=de1-balance.rezproffx.ru#drvpn.net
